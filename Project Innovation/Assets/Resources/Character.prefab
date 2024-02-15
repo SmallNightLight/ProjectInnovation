@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _joyconInput:
     _isVariable: 1
-    _variable: {fileID: 11400000, guid: d79478860766a47469f0e86668d92c3b, type: 2}
+    _variable: {fileID: 0}
     _constant: {x: 0, y: 0}
   _acceleration: 15
   _deaccceleration: 0.7

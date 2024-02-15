@@ -12,9 +12,4 @@ public class SpawnPlayers : MonoBehaviour
     {
         PhotonNetwork.Instantiate(_characterPrefab.name, _startPosition, Quaternion.identity);
     }
-
-    private void Update()
-    {
-        
-    }
 }

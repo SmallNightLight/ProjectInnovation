@@ -26,11 +26,7 @@ public class CharacterMovement : MonoBehaviour
         if (_photonView.IsMine)
         {
             Color newColor = AssignRandomColor();
-            
-        }
-        else
-        {
-
+            _photonView.RPC("SyncColor", RpcTarget.OthersBuffered, newColor.r, newColor.g, newColor.b);
         }
     }
 
@@ -49,7 +45,6 @@ public class CharacterMovement : MonoBehaviour
     [PunRPC]
     private void SyncColor(float r, float g, float b)
     {
-        // Change the material color to the synchronized color
         if (_meshRenderer != null)
         {
             Material material = _meshRenderer.material;
@@ -63,7 +58,7 @@ public class CharacterMovement : MonoBehaviour
         if (_photonView.IsMine)
         {
             Color materialColor = _meshRenderer.material.color;
-            _photonView.RPC("SyncColor", RpcTarget.OthersBuffered, materialColor.r, materialColor.g, materialColor.b);
+            //_photonView.RPC("SyncColor", RpcTarget.OthersBuffered, materialColor.r, materialColor.g, materialColor.b);
         }
     }
 

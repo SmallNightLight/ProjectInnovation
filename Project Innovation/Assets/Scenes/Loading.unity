@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993d31256ae7b6d4da18bdf8913a23ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: Lobby
+  _nextSceneName: Lobby
 --- !u!4 &439262732
 Transform:
   m_ObjectHideFlags: 0
@@ -425,7 +425,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.62799716, g: 1, b: 0.45660377, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.8862745, b: 0.698874, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

@@ -40,6 +40,7 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - SyncColor
+  - GetInput
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

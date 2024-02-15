@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class ConnectToServer : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private string nextSceneName;
+    [SerializeField] private string _nextSceneName;
 
     private void Start()
     {
@@ -20,6 +20,6 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         Debug.Log("Joined lobby");
-        SceneManager.LoadScene(nextSceneName);
+        SceneManager.LoadScene(_nextSceneName);
     }
 }
