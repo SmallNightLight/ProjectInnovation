@@ -1,76 +1,46 @@
 using ScriptableArchitecture.Data;
 using UnityEngine;
-using Photon.Pun;
 
 public class CharacterMovement : MonoBehaviour
 {
     [Header("Data")]
-    [SerializeField] private Vector2Reference _joyconInput;
+    [SerializeField] private PlayersInputReference _playersInput;
+
+    [Header("Testing")]
+    [SerializeField] private bool _useCustomInput;
+    [SerializeField] private PlayerInputReference _testInput;
 
     [Header("Settings")]
     [SerializeField] private float _acceleration = 10;
     [SerializeField] private float _deaccceleration = 0.8f;
     [SerializeField] private float _maxSpeed = 50;
 
+    [Header("Other")]
+    [SerializeField] private string _playerName;
+    private PlayerInput _playerInput;
+
     [Header("Components")]
-    private MeshRenderer _meshRenderer;
     private Rigidbody _rigidbody;
-    private PhotonView _photonView;
 
     private void Start()
     {
-        TryGetComponent(out _photonView);
         TryGetComponent(out _rigidbody);
-        TryGetComponent(out _meshRenderer);
 
-        if (_photonView.IsMine)
+        if (_useCustomInput)
         {
-            Color newColor = AssignRandomColor();
-            _photonView.RPC("SyncColor", RpcTarget.OthersBuffered, newColor.r, newColor.g, newColor.b);
-        }
-    }
-
-    private Color AssignRandomColor()
-    {
-        Material originalMaterial = _meshRenderer.material;
-        Material newMaterial = new Material(originalMaterial);
-
-        Color newColor = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
-        newMaterial.color = newColor;
-        GetComponent<MeshRenderer>().material = newMaterial;
-
-        return newColor;
-    }
-
-    [PunRPC]
-    private void SyncColor(float r, float g, float b)
-    {
-        if (_meshRenderer != null)
-        {
-            Material material = _meshRenderer.material;
-            material.color = new Color(r, g, b);
-            _meshRenderer.material = material;
-        }
-    }
-
-    private void Update()
-    {
-        if (_photonView.IsMine)
-        {
-            Color materialColor = _meshRenderer.material.color;
-            //_photonView.RPC("SyncColor", RpcTarget.OthersBuffered, materialColor.r, materialColor.g, materialColor.b);
+            InitializeCharacter("TestCharacter");
         }
     }
 
     private void FixedUpdate()
     {
-        if (_photonView.IsMine)
+        if (_playerInput != null)
         {
-            SetMovement();
+            DoMovement();
         }
     }
 
-    private void SetMovement()
+    private void DoMovement()
     {
         if (_rigidbody == null)
         {
@@ -78,7 +48,7 @@ public class CharacterMovement : MonoBehaviour
             return;
         }
 
-        Vector2 input = _joyconInput.Value.normalized;
+        Vector2 input = _playerInput.MovementInput.normalized;
         Vector3 inputVelocity = new Vector3(-input.y, 0, input.x);
 
         if (input.magnitude > 0)
@@ -93,6 +63,20 @@ public class CharacterMovement : MonoBehaviour
         if (_rigidbody.velocity.magnitude > _maxSpeed)
         {
             _rigidbody.velocity = _rigidbody.velocity.normalized * _maxSpeed;
+        }
+    }
+
+    public void InitializeCharacter(string playerName)
+    {
+        _playerName = playerName;
+
+        if (_useCustomInput)
+        {
+            _playerInput = _testInput.Value;
+        }
+        else
+        {
+            _playersInput.Value.TryGetPlayerInput(_playerName, out _playerInput);
         }
     }
 }

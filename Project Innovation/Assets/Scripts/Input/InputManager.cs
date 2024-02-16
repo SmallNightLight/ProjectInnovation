@@ -6,7 +6,8 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     [Header("Data")]
-    [SerializeField] private bool IsMainGame;
+    [SerializeField] private bool _isMainGame;
+    [SerializeField] private PlayersInputReference _playersInput;
 
     [Header("Input")]
     [SerializeField] private Vector2Reference _movementInput;
@@ -29,6 +30,8 @@ public class InputManager : MonoBehaviour
 
     public void SendInput()
     {
+        if (_isMainGame) return;
+
         if (PhotonNetwork.IsConnected)
         {
             _photonView.RPC("GetInput", RpcTarget.Others, _photonView.OwnerActorNr, _movementInput.Value, _directionInput.Value, _interactingInput.Value, _shootingInput.Value);
@@ -42,8 +45,23 @@ public class InputManager : MonoBehaviour
     [PunRPC]
     public void GetInput(int player, Vector2 movementInput, Vector2 directionInput, bool interactingInput, bool shootingInput)
     {
-        if (!IsMainGame) return;
+        if (!_isMainGame) return;
+
+        //Maybe dont use the player number for name
+        string playerName = player.ToString();
+        
+        if (!_playersInput.Value.TrySetPlayerInput(playerName, movementInput, directionInput, interactingInput, shootingInput))
+        {
+            //Failed to find the player, so add a new player
+            AddNewPlayer(playerName);
+        }
 
         Debug.Log($"Player: {player}\nMovement: {movementInput}\nDirectionInput: {directionInput}\n Interacting: {interactingInput}\nShooting: {shootingInput}");
+    }
+
+    public void AddNewPlayer(string playerName)
+    {
+        _playersInput.Value.AddNewPlayer(playerName);
+        Debug.Log("Added player");
     }
 }

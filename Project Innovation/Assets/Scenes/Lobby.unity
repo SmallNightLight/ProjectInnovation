@@ -301,6 +301,8 @@ MonoBehaviour:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 13335b4ae31e07049af2944a6acbabd0, type: 2}
     _constant: 
+  _playerJoinedRoomEvent: {fileID: 11400000, guid: a13910929482b434597e494456704394,
+    type: 2}
 --- !u!4 &115083496
 Transform:
   m_ObjectHideFlags: 0
