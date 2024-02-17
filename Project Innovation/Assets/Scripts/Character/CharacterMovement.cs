@@ -14,6 +14,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float _acceleration = 10;
     [SerializeField] private float _deaccceleration = 0.8f;
     [SerializeField] private float _maxSpeed = 50;
+    [SerializeField] private float _rotationSpeed = 5;
+    [SerializeField] private float _offsetRotation = -90;
 
     [Header("Other")]
     [SerializeField] private string _playerName;
@@ -36,11 +38,12 @@ public class CharacterMovement : MonoBehaviour
     {
         if (_playerInput != null)
         {
-            DoMovement();
+            SetMovement();
+            SetDirection();
         }
     }
 
-    private void DoMovement()
+    private void SetMovement()
     {
         if (_rigidbody == null)
         {
@@ -63,6 +66,17 @@ public class CharacterMovement : MonoBehaviour
         if (_rigidbody.velocity.magnitude > _maxSpeed)
         {
             _rigidbody.velocity = _rigidbody.velocity.normalized * _maxSpeed;
+        }
+    }
+   
+    private void SetDirection()
+    {
+        Vector3 direction = new Vector3(_playerInput.DirectionInput.x, 0f, _playerInput.DirectionInput.y).normalized;
+
+        if (direction != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up) * Quaternion.Euler(0f, _offsetRotation, 0f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
         }
     }
 

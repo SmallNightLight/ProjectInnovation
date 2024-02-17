@@ -60,10 +60,11 @@ MonoBehaviour:
       DirectionInput: {x: 0, y: 0}
       InteractingInput: 0
       ShootingInput: 0
-  _acceleration: 15
+  _acceleration: 100
   _deaccceleration: 0.7
   _maxSpeed: 5
   _playerName: 
+  _rotationSpeed: 20
 --- !u!54 &7174118127577480442
 Rigidbody:
   m_ObjectHideFlags: 0
