@@ -1,15 +1,9 @@
 using ScriptableArchitecture.Data;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterInput))]
 public class CharacterMovement : MonoBehaviour
 {
-    [Header("Data")]
-    [SerializeField] private PlayersInputReference _playersInput;
-
-    [Header("Testing")]
-    [SerializeField] private bool _useCustomInput;
-    [SerializeField] private PlayerInputReference _testInput;
-
     [Header("Settings")]
     [SerializeField] private float _acceleration = 10;
     [SerializeField] private float _deaccceleration = 0.8f;
@@ -17,30 +11,20 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 5;
     [SerializeField] private float _offsetRotation = -90;
 
-    [Header("Other")]
-    [SerializeField] private string _playerName;
-    private PlayerInput _playerInput;
-
     [Header("Components")]
     private Rigidbody _rigidbody;
+    private CharacterInput _characterInput;
 
     private void Start()
     {
         TryGetComponent(out _rigidbody);
-
-        if (_useCustomInput)
-        {
-            InitializeCharacter("TestCharacter");
-        }
+        TryGetComponent(out _characterInput);
     }
 
     private void FixedUpdate()
     {
-        if (_playerInput != null)
-        {
-            SetMovement();
-            SetDirection();
-        }
+        SetMovement();
+        SetDirection();
     }
 
     private void SetMovement()
@@ -51,7 +35,7 @@ public class CharacterMovement : MonoBehaviour
             return;
         }
 
-        Vector2 input = _playerInput.MovementInput.normalized;
+        Vector2 input = _characterInput.MovementInput.normalized;
         Vector3 inputVelocity = new Vector3(-input.y, 0, input.x);
 
         if (input.magnitude > 0)
@@ -71,26 +55,19 @@ public class CharacterMovement : MonoBehaviour
    
     private void SetDirection()
     {
-        Vector3 direction = new Vector3(_playerInput.DirectionInput.x, 0f, _playerInput.DirectionInput.y).normalized;
+        Vector2 directionInput = _characterInput.DirectionInput;
+        Vector3 direction = new Vector3(directionInput.x, 0f, directionInput.y).normalized;
 
         if (direction != Vector3.zero)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up) * Quaternion.Euler(0f, _offsetRotation, 0f);
+            Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
+
+            if (false) //???
+            {
+                targetRotation *= Quaternion.Euler(0f, _offsetRotation, 0f);
+            }
+
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
-        }
-    }
-
-    public void InitializeCharacter(string playerName)
-    {
-        _playerName = playerName;
-
-        if (_useCustomInput)
-        {
-            _playerInput = _testInput.Value;
-        }
-        else
-        {
-            _playersInput.Value.TryGetPlayerInput(_playerName, out _playerInput);
         }
     }
 }

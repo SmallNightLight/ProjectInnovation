@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4498081804162450052}
+  - component: {fileID: 4476893708772239497}
   - component: {fileID: 1328812030010997971}
+  - component: {fileID: 5760710532013405749}
   - component: {fileID: 7174118127577480442}
   - component: {fileID: 6848773024092582225}
   - component: {fileID: 8066859287629912352}
@@ -36,6 +38,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4476893708772239497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335436540938478478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab40b66cc9b45142b03e0f31e752657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playersInput:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 3e1198c9f5cfa0c4bb96723eb9aaa870, type: 2}
+  _useKeyboardInput: 1
+  _camera: {fileID: 0}
 --- !u!114 &1328812030010997971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,23 +67,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831f60150b6e9fd4a93b7f74b751ffc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playersInput:
-    _isVariable: 1
-    _variable: {fileID: 11400000, guid: 3e1198c9f5cfa0c4bb96723eb9aaa870, type: 2}
-  _useCustomInput: 1
-  _testInput:
-    _isVariable: 1
-    _variable: {fileID: 11400000, guid: 0f429f8eb6eed8b49ae71012b4bd64d1, type: 2}
-    _constant:
-      MovementInput: {x: 0, y: 0}
-      DirectionInput: {x: 0, y: 0}
-      InteractingInput: 0
-      ShootingInput: 0
   _acceleration: 100
   _deaccceleration: 0.7
-  _maxSpeed: 5
-  _playerName: 
+  _maxSpeed: 4
   _rotationSpeed: 20
+  _offsetRotation: -90
+--- !u!114 &5760710532013405749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335436540938478478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1deb1f7c074bd344fad52dabe84f8f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _testWeaponData:
+    DamagePerBullet: 0
+    Spread: 0
+    BulletsPerShot: 0
+    ShotCount: 0
+    FireRate: 0
+    BulletSpeed: 0
+    Range: 0
+    Recoil: 0
+    EnemyRecoil: 0
+  _bulletPrefab: {fileID: 0}
 --- !u!54 &7174118127577480442
 Rigidbody:
   m_ObjectHideFlags: 0
