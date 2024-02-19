@@ -1,7 +1,7 @@
 using ScriptableArchitecture.Data;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterInput))]
+[RequireComponent(typeof(CharacterBase))]
 public class CharacterMovement : MonoBehaviour
 {
     [Header("Settings")]
@@ -12,12 +12,12 @@ public class CharacterMovement : MonoBehaviour
 
     [Header("Components")]
     private Rigidbody _rigidbody;
-    private CharacterInput _characterInput;
+    private CharacterBase _characterBase;
 
     private void Start()
     {
         TryGetComponent(out _rigidbody);
-        TryGetComponent(out _characterInput);
+        TryGetComponent(out _characterBase);
     }
 
     private void FixedUpdate()
@@ -34,7 +34,7 @@ public class CharacterMovement : MonoBehaviour
             return;
         }
 
-        Vector2 input = _characterInput.MovementInput.normalized;
+        Vector2 input = _characterBase.MovementInput.normalized;
         Vector3 inputVelocity = new Vector3(-input.y, 0, input.x);
 
         if (input.magnitude > 0)
@@ -54,7 +54,7 @@ public class CharacterMovement : MonoBehaviour
    
     private void SetDirection()
     {
-        Vector2 directionInput = _characterInput.DirectionInput;
+        Vector2 directionInput = _characterBase.DirectionInput;
         Vector3 direction = new Vector3(directionInput.x, 0f, directionInput.y).normalized;
 
         if (direction != Vector3.zero)

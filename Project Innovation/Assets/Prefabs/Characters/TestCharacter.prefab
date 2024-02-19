@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3918836335012427014}
   m_Layer: 0
   m_Name: TestCharacter
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,11 +85,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _testWeaponData:
     DamagePerBullet: 10
-    Spread: 20
-    BulletsPerShot: 1
-    ShotCount: 5
+    Spread: 90
+    BulletsPerShot: 5
+    ShotCount: 999
     FireRate: 0.3
-    BulletSpeed: 50
+    BulletSpeed: 30
     Range: 10
     Recoil: 2
     EnemyRecoil: 0.3
