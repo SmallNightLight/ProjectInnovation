@@ -35,15 +35,18 @@ public class CharacterWeapon : MonoBehaviour
             _shootTimer -= Time.deltaTime;
         }
 
-        if (_shootTimer <= 0 && isShooting)
+        if (isShooting && _shootTimer <= 0)
         {
-            _shootTimer = 10;
+            _shootTimer = _testWeaponData.FireRate;
             Shoot();
         }
     }
 
     private void Shoot()
     {
+        GameObject bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
 
+        Vector3 bulletDirection = new Vector3(_characterInput.DirectionInput.x, 0, _characterInput.DirectionInput.y);
+        bullet.GetComponent<Rigidbody>().AddForce(bulletDirection.normalized * _testWeaponData.BulletSpeed * 100);
     }
 }

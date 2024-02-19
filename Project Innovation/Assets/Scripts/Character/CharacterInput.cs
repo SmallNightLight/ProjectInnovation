@@ -70,7 +70,7 @@ public class CharacterInput : MonoBehaviour
         {
             if (_useKeyboardInput)
             {
-                return Input.GetMouseButton(0);
+                return Input.GetMouseButton(1);
             }
 
             return _playerInput.InteractingInput;
@@ -83,7 +83,7 @@ public class CharacterInput : MonoBehaviour
         {
             if (_useKeyboardInput)
             {
-                return Input.GetMouseButton(1);
+                return Input.GetMouseButton(0);
             }
 
             return _playerInput.ShootingInput;
