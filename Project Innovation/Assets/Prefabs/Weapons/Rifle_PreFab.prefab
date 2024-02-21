@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 83432f5ae2a47014c80a02e65179b167,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.135323
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83432f5ae2a47014c80a02e65179b167,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.81
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83432f5ae2a47014c80a02e65179b167,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.5066633
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83432f5ae2a47014c80a02e65179b167,
         type: 3}
@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 83432f5ae2a47014c80a02e65179b167,
         type: 3}
       propertyPath: m_Name
-      value: RifleFBX
+      value: Rifle_PreFab
       objectReference: {fileID: 0}
     - target: {fileID: 3799981661403314672, guid: 83432f5ae2a47014c80a02e65179b167,
         type: 3}

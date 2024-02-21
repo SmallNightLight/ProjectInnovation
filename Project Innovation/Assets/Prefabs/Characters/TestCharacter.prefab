@@ -54,6 +54,7 @@ MonoBehaviour:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 3e1198c9f5cfa0c4bb96723eb9aaa870, type: 2}
   _useKeyboardInput: 1
+  _team: 0
   _camera: {fileID: 0}
 --- !u!114 &1328812030010997971
 MonoBehaviour:
@@ -83,16 +84,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1deb1f7c074bd344fad52dabe84f8f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testWeaponData:
-    DamagePerBullet: 10
-    Spread: 90
-    BulletsPerShot: 5
-    ShotCount: 999
-    FireRate: 0.3
-    BulletSpeed: 30
-    Range: 10
-    Recoil: 2
-    EnemyRecoil: 0.3
+  _currentParts:
+  - _isVariable: 1
+    _variable: {fileID: 11400000, guid: 64f7054f2585f15459c92fb9b4da372b, type: 2}
+    _constant:
+      PartType: 0
+      Bonus: {fileID: 0}
+      DamagePerBullet: 0
+      Spread: 0
+      BulletsPerShot: 0
+      ShotCount: 0
+      FireRate: 0
+      BulletSpeed: 0
+      Range: 0
+      Recoil: 0
+      EnemyRecoil: 0
+      PartPrefab: {fileID: 0}
+      ItemPrefab: {fileID: 0}
+  - _isVariable: 1
+    _variable: {fileID: 11400000, guid: c83be9ddbc9af17428502e32d40ff3ad, type: 2}
+    _constant:
+      PartType: 0
+      Bonus: {fileID: 0}
+      DamagePerBullet: 0
+      Spread: 0
+      BulletsPerShot: 0
+      ShotCount: 0
+      FireRate: 0
+      BulletSpeed: 0
+      Range: 0
+      Recoil: 0
+      EnemyRecoil: 0
+      PartPrefab: {fileID: 0}
+      ItemPrefab: {fileID: 0}
+  - _isVariable: 1
+    _variable: {fileID: 11400000, guid: 877630f942c10f64e83f7825ad48c338, type: 2}
+    _constant:
+      PartType: 0
+      Bonus: {fileID: 0}
+      DamagePerBullet: 0
+      Spread: 0
+      BulletsPerShot: 0
+      ShotCount: 0
+      FireRate: 0
+      BulletSpeed: 0
+      Range: 0
+      Recoil: 0
+      EnemyRecoil: 0
+      PartPrefab: {fileID: 0}
+      ItemPrefab: {fileID: 0}
+  _infiniteAmmo: 1
   _bulletPrefab: {fileID: 946379143936500698, guid: 6da955cb4f8c63f4fb1085372a681db9,
     type: 3}
 --- !u!54 &7174118127577480442

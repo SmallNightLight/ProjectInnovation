@@ -4,8 +4,13 @@ using UnityEngine;
 namespace ScriptableArchitecture.Data
 {
     [System.Serializable]
-    public class WeaponData : IDataPoint
+    public class WeaponPartData : IDataPoint
     {
+        [Header("Base")]
+        public WeaponPartType PartType;
+        [Tooltip("The bonus for when the parts with the same bonus are together. Don't set it when PartType is Bonus")] public WeaponPartDataVariable Bonus;
+
+        [Header("Stats")]
         [Tooltip("The damage per individual bullet")] public float DamagePerBullet;
         [Tooltip("The amount of spread in degrees")] public float Spread;
         [Tooltip("The amount of bullets per shot")] public int BulletsPerShot;
@@ -15,5 +20,17 @@ namespace ScriptableArchitecture.Data
         [Tooltip("The range of the shot / bullet")] public float Range;
         [Tooltip("The amount of recoil for the player after a shot")] public float Recoil;
         [Tooltip("The amount of recoil for the enemy after getting hit")] public float EnemyRecoil;
+
+        [Header("Prefabs")]
+        public GameObject PartPrefab;
+        public GameObject ItemPrefab;
+    }
+
+    public enum WeaponPartType
+    {
+        Barrel,
+        Base,
+        Stock,
+        Bonus
     }
 }

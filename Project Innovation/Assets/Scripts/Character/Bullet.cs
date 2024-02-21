@@ -9,10 +9,10 @@ public class Bullet : MonoBehaviour
 
     [Header("ScriptData")]
     private Vector3 _startPosition;
-    private WeaponData _weaponData;
+    private WeaponPartData _weaponData;
     private int _team;
 
-    public void InitializeBullet(WeaponData weaponData, Vector3 direction, int team)
+    public void InitializeBullet(WeaponPartData weaponData, Vector3 direction, int team)
     {
         _rigidbody = GetComponent<Rigidbody>();
         _rigidbody.AddForce(direction.normalized * weaponData.BulletSpeed * 100);
@@ -36,7 +36,12 @@ public class Bullet : MonoBehaviour
         {
             if (other.gameObject.TryGetComponent(out CharacterBase character) && character.Team != _team)
             {
-                Debug.Log("HIT");
+                //Apply recoil
+                if (other.gameObject.TryGetComponent(out CharacterWeapon characterWeapon))
+                {
+                    Vector3 bulletDirection = (transform.position - _startPosition).normalized;
+                    characterWeapon.ApplyRecoil(bulletDirection, _weaponData.EnemyRecoil);
+                }
             }
         }
     }
