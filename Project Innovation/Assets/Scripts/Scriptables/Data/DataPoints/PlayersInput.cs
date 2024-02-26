@@ -21,7 +21,7 @@ namespace ScriptableArchitecture.Data
 
         public bool TryGetPlayerInput(string playerName, out PlayerInput playerInput)
         {
-            if (_data.ContainsKey(playerName))
+            if (HasPlayer(playerName))
             {
                 playerInput = _data[playerName];
                 return true;
@@ -33,7 +33,7 @@ namespace ScriptableArchitecture.Data
 
         public bool TrySetPlayerInput(string playerName, Vector2 movementInput, Vector2 directionInput, bool interactingInput, bool shootingInput)
         {
-            if (_data.ContainsKey(playerName))
+            if (HasPlayer(playerName))
             {
                 _data[playerName].MovementInput = movementInput;
                 _data[playerName].DirectionInput = directionInput;
@@ -45,6 +45,8 @@ namespace ScriptableArchitecture.Data
 
             return false;
         }
+
+        public bool HasPlayer(string playerName) => _data.ContainsKey(playerName);
     }
 
     [System.Serializable]

@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6602599376148815024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2565262744217091112}
+  - component: {fileID: 3621172314382189228}
+  m_Layer: 0
+  m_Name: RoomManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2565262744217091112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6602599376148815024}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3621172314382189228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6602599376148815024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242a1f644d340014382e7843c22a3c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roomData:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 073465d3b90fbca4aa85bd8cf7025f40, type: 2}
+    _constant:
+      _teamStartPosition: []
+      PlayersPerTeam: 2
+      MaxTeams: 4
+  _createDefaultRoom:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: b97636b0eb0007643b7e4e8b1f06fcbe, type: 2}
+    _constant: 0
+  _gameSceneName:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: d7ec94c2b0fda6e429a7807336f9b6a9, type: 2}
+    _constant: 
+  _defaultRoomName:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 13335b4ae31e07049af2944a6acbabd0, type: 2}
+    _constant: 
+  _playerName:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 897eb5384847cfb4e9f7e10f774c16d9, type: 2}
+    _constant: 
+  _inTeamLobby:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 29312521137289c49b4058326f2b4d1a, type: 2}
+    _constant: 0
+  _UIMessageEvent:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: c042f12600b19df4f81890ddbc9be8eb, type: 2}
+    _constant: 
+  _joinedRoomEvent: {fileID: 11400000, guid: 7324e0159e2cc7c45a49ef8d3580db7c, type: 2}
+  _isMainGame:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 7ce1295df29463942909b9271f731e6c, type: 2}
+    _constant: 0
+  _roomNameInput: {fileID: 0}
+  _playerNameInput: {fileID: 0}

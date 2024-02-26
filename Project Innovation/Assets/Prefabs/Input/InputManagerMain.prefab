@@ -86,7 +86,18 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 5379131900541951661, guid: f5e7edd64e7353a48b81e6a5c710d422,
         type: 3}
+      propertyPath: _playersInput._variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e1198c9f5cfa0c4bb96723eb9aaa870,
+        type: 2}
+    - target: {fileID: 5379131900541951661, guid: f5e7edd64e7353a48b81e6a5c710d422,
+        type: 3}
       propertyPath: PlayersInput._isVariable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5379131900541951661, guid: f5e7edd64e7353a48b81e6a5c710d422,
+        type: 3}
+      propertyPath: _playersInput._isVariable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5379131900541951661, guid: f5e7edd64e7353a48b81e6a5c710d422,

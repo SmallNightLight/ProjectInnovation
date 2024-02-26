@@ -42,6 +42,7 @@ MonoBehaviour:
   - SyncColor
   - GetInput
   - AddPlayer
+  - UpdateRoomData
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

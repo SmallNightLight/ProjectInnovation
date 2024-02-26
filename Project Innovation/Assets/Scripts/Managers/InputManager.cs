@@ -3,7 +3,7 @@ using ScriptableArchitecture.Data;
 using UnityEngine;
 
 [RequireComponent(typeof(PhotonView))]
-public class InputManager : MonoBehaviour
+public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
 {
     [Header("Data")]
     [SerializeField] private bool _isMainGame;
@@ -15,15 +15,19 @@ public class InputManager : MonoBehaviour
     [SerializeField] private BoolReference _interactingInput;
     [SerializeField] private BoolReference _shootingInput;
 
+    [Header("Prefabs")]
+    [SerializeField] private GameObject _characterPrefab;
+
     [Header("Components")]
     private PhotonView _photonView;
 
-    private void Start()
+
+    public void Setup()
     {
         _photonView = GetComponent<PhotonView>();
     }
 
-    private void Update()
+    public void Update()
     {
         SendInput();
     }
@@ -61,7 +65,12 @@ public class InputManager : MonoBehaviour
 
     public void AddNewPlayer(string playerName)
     {
-        _playersInput.Value.AddNewPlayer(playerName);
         Debug.Log("Added player");
+
+        //Create new character gameObject
+        Instantiate(_characterPrefab);
+        
+         //Add player data   
+        _playersInput.Value.AddNewPlayer(playerName);
     }
 }
