@@ -101,7 +101,7 @@ public class RoomManager : MonoBehaviourPunCallbacks, ISetupManager
 
             //Add player name to room properties
             playerNames.Add(_playerName.Value);
-            customProperties["PlayerNames"] = JsonUtility.ToJson(playerNames);
+            customProperties["PlayerNames"] = JsonUtility.ToJson(playerNames); //doesnt work gives {}
 
             //Get room data
             _roomData.Value = RoomData.CreateFromJson((string)PhotonNetwork.CurrentRoom.CustomProperties["Data"]);

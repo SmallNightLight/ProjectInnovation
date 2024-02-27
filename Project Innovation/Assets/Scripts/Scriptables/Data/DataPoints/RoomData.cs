@@ -95,11 +95,10 @@ namespace ScriptableArchitecture.Data
                 else
                 {
                     //team is full, switch players
-                    int oldTeamIndex = _teams[oldTeam].Players.IndexOf(playerName);
-                    string otherPlayerName = _teams[oldTeam].Players[oldTeamIndex];
+                    string otherPlayerName = _teams[team].Players[^1];
 
-                    _teams[oldTeam].Players[oldTeamIndex] = _teams[team].Players[PlayersPerTeam - 1];
-                    _teams[team].Players[PlayersPerTeam - 1] = otherPlayerName;
+                    _teams[oldTeam].Players.Add(otherPlayerName);
+                    _teams[team].Players[^1] = playerName;
                 }
             }
         }
@@ -110,7 +109,7 @@ namespace ScriptableArchitecture.Data
 
             _playerCount++;
 
-            if (_playerCount < PlayersPerTeam * _teams.Count)
+            if (_playerCount  <= PlayersPerTeam * _teams.Count)
             {
                 //Find team with empty spot
                 for (int i = 0; i < _teams.Count; i++)

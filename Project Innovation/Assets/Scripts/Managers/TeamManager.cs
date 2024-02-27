@@ -10,7 +10,7 @@ public class TeamManager : MonoBehaviour, ISetupManager
     [Header("Data")]
     [SerializeField] private RoomDataReference _roomData;
     [SerializeField] private StringReference _playerName;
-    [SerializeField] private GameEvent _updateRoomData;
+    [SerializeField] private GameEvent _updateRoomDataVisuals;
 
     [Header("Loading game")]
     [SerializeField] private BoolReference _isMainGame;
@@ -32,7 +32,7 @@ public class TeamManager : MonoBehaviour, ISetupManager
 
         _roomData.Value.TryAddPlayer(_playerName.Value);
         UpdateOtherRoomData();
-        _updateRoomData.Raise();
+        _updateRoomDataVisuals.Raise();
     }
 
     public void UpdateOtherRoomData()
@@ -46,9 +46,6 @@ public class TeamManager : MonoBehaviour, ISetupManager
             customProperties["Data"] = _roomData.Value.Deserialize();
             PhotonNetwork.CurrentRoom.SetCustomProperties(customProperties);
             _photonView.RPC("UpdateRoomData", RpcTarget.Others);
-
-            //PhotonNetwork.RemoveBufferedRPCs(_photonView.ViewID, nameof(UpdateRoomData));
-            //_photonView.RPC("UpdateRoomData", RpcTarget.OthersBuffered, _roomData.Value.Deserialize());
         }
         else
         {
@@ -57,12 +54,11 @@ public class TeamManager : MonoBehaviour, ISetupManager
     }
 
     [PunRPC]
-    public void UpdateRoomData() //string roomData
+    public void UpdateRoomData()
     {
-        //_roomData.Value = RoomData.CreateFromJson(roomData);
-
         //Get room data from custom properties
         _roomData.Value = RoomData.CreateFromJson((string)PhotonNetwork.CurrentRoom.CustomProperties["Data"]);
+        _updateRoomDataVisuals.Raise();
     }
 
     public void StartGame()

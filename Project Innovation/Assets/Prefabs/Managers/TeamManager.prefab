@@ -60,7 +60,8 @@ MonoBehaviour:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 897eb5384847cfb4e9f7e10f774c16d9, type: 2}
     _constant: 
-  _updateRoomData: {fileID: 11400000, guid: b21473a389d673044b1fa5a998b40cab, type: 2}
+  _updateRoomDataVisuals: {fileID: 11400000, guid: 66d9e866bedc93640bf430dc2ce7a889,
+    type: 2}
   _isMainGame:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 7ce1295df29463942909b9271f731e6c, type: 2}

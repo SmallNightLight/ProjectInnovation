@@ -9,7 +9,8 @@ public class TeamLobby : MonoBehaviour
     [SerializeField] private BoolReference _isMainGame;
     [SerializeField] private RoomDataReference _roomData;
     [SerializeField] private StringReference _playerName;
-    [SerializeField] private GameEvent _updateRoomDataEvent;
+    [SerializeField] private GameEvent _updateOtherRoomData;
+    [SerializeField] private GameEvent _updateRoomDataVisuals;
 
     [Header("Team data")]
     [SerializeField] private int _team;
@@ -42,7 +43,8 @@ public class TeamLobby : MonoBehaviour
     public void SetPlayerTeam()
     {
         _roomData.Value.SetTeam(_playerName.Value, _team);
-        _updateRoomDataEvent.Raise();
+        _updateOtherRoomData.Raise();
+        _updateRoomDataVisuals.Raise();
     }
 
     public void UpdatePlayers()
@@ -61,9 +63,7 @@ public class TeamLobby : MonoBehaviour
         foreach (string playerName in teamData.Players)
         {
             if (Instantiate(_playerNamePrefab, _playersParent.transform).TryGetComponent(out TMP_Text text))
-            {
                 text.text = playerName;
-            }
             else
                 Debug.Log("Did not find TMP component");
         }

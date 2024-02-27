@@ -531,7 +531,9 @@ MonoBehaviour:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 897eb5384847cfb4e9f7e10f774c16d9, type: 2}
     _constant: 
-  _updateRoomDataEvent: {fileID: 11400000, guid: b21473a389d673044b1fa5a998b40cab,
+  _updateOtherRoomData: {fileID: 11400000, guid: b21473a389d673044b1fa5a998b40cab,
+    type: 2}
+  _updateRoomDataVisuals: {fileID: 11400000, guid: 66d9e866bedc93640bf430dc2ce7a889,
     type: 2}
   _team: 0
   _playerNamePrefab: {fileID: 900596868648030873, guid: 97dfb03cf2feab54e824b26afc547c97,
@@ -553,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d923ca0399f2946a9dfeb692dc73b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: b21473a389d673044b1fa5a998b40cab, type: 2}
+  _event: {fileID: 11400000, guid: 66d9e866bedc93640bf430dc2ce7a889, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
