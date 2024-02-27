@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8527226301394793644}
   - component: {fileID: 7058000486541113615}
   - component: {fileID: 6918311072838094030}
+  - component: {fileID: 6667191993156605536}
   m_Layer: 0
   m_Name: TeamManager
   m_TagString: Untagged
@@ -51,13 +52,27 @@ MonoBehaviour:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 073465d3b90fbca4aa85bd8cf7025f40, type: 2}
     _constant:
-      _teamStartPosition: []
       PlayersPerTeam: 2
       MaxTeams: 4
+      _teams: []
+      _playerCount: 0
   _playerName:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 897eb5384847cfb4e9f7e10f774c16d9, type: 2}
     _constant: 
+  _updateRoomData: {fileID: 11400000, guid: b21473a389d673044b1fa5a998b40cab, type: 2}
+  _isMainGame:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 7ce1295df29463942909b9271f731e6c, type: 2}
+    _constant: 0
+  _mainSceneName:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: d7ec94c2b0fda6e429a7807336f9b6a9, type: 2}
+    _constant: 
+  _controlerSceneName:
+    _isVariable: 0
+    _variable: {fileID: 0}
+    _constant: Controller
 --- !u!114 &8527226301394793644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +142,34 @@ MonoBehaviour:
       - m_Target: {fileID: 5894647608129653235}
         m_TargetAssemblyTypeName: TeamManager, Assembly-CSharp
         m_MethodName: AddPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6667191993156605536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132956506117718885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d923ca0399f2946a9dfeb692dc73b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 5bf003e79573ac04fafa2d09ca6343fa, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5894647608129653235}
+        m_TargetAssemblyTypeName: TeamManager, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

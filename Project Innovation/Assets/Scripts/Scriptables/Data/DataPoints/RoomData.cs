@@ -1,18 +1,62 @@
 using ScriptableArchitecture.Core;
 using System.Collections.Generic;
 using UnityEngine;
+using WebSocketSharp;
 
 namespace ScriptableArchitecture.Data
 {
     [System.Serializable]
-    public class RoomData : IDataPoint
+    public class RoomData : IDataPoint, IAssignment<RoomData>
     {
-        public List<Vector2> _teamStartPosition;
         public int PlayersPerTeam = 2;
         public int MaxTeams = 4;
 
-        private List<TeamData> _teams = new();
-        private int _playerCount = 0;
+        [SerializeField] private List<TeamData> _teams = new();
+        [SerializeField] private int _playerCount = 0;
+
+        public RoomData() 
+        {
+            PlayersPerTeam = 2;
+            MaxTeams = 4;
+            _teams = new List<TeamData>();
+            _playerCount = 0;
+        }
+
+        public RoomData(int playersPerTeam, int maxTeams, List<TeamData> teams, int playerCount) 
+        {
+            PlayersPerTeam = playersPerTeam;
+            MaxTeams = maxTeams;
+            _teams = teams;
+            _playerCount = playerCount;
+        }
+
+        public RoomData Copy()
+        {
+            List<TeamData> copiedTeams = new List<TeamData>();
+
+            foreach (TeamData team in _teams)
+            {
+                TeamData copiedTeam = new TeamData();
+                copiedTeam.Players = new List<string>(team.Players);
+                copiedTeams.Add(copiedTeam);
+            }
+
+            return new RoomData(PlayersPerTeam, MaxTeams, copiedTeams, _playerCount);
+        }
+
+        //Serialization for photon
+        public string Deserialize()
+        {
+            return JsonUtility.ToJson(this);
+        }
+
+        public static RoomData CreateFromJson(string data)
+        {
+            if (data.IsNullOrEmpty())
+                return new RoomData(); //To chane data on room change the script parameters here
+
+            return JsonUtility.FromJson<RoomData>(data);
+        }
 
         public void SetTeam(string playerName, int team)
         {
@@ -107,10 +151,40 @@ namespace ScriptableArchitecture.Data
             return false;
         }
 
+        public void Reset()
+        {
+            _teams.Clear();
+            _playerCount = 0;
+        }
+
         public bool CanAddPlayer(int team) => _teams[team].Players.Count < PlayersPerTeam;
 
         public List<TeamData> GetTeams() => _teams;
 
+        public TeamData GetTeamData(int team)
+        {
+            if (team >= TeamCount) return null;
+
+            return _teams[team];
+        }
+
         public int PlayerCount => _playerCount;
+
+        public int TeamCount
+        {
+            get
+            {
+                int teamCount = _playerCount / PlayersPerTeam;
+
+                if (_playerCount % PlayersPerTeam != 0)
+                {
+                    teamCount++;
+                }
+
+                return teamCount;
+            }
+        }
     }
+
+    //public interface RoomDataAssignment : RoomDataAssignment<RoomData> { }
 }

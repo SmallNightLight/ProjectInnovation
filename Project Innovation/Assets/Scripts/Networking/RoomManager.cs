@@ -10,7 +10,6 @@ public class RoomManager : MonoBehaviourPunCallbacks, ISetupManager
     [SerializeField] private RoomDataReference _roomData;
 
     [SerializeField] private BoolReference _createDefaultRoom;
-    [SerializeField] private StringReference _gameSceneName;
     [SerializeField] private StringReference _defaultRoomName;
 
     [SerializeField] private StringReference _playerName;
@@ -70,31 +69,45 @@ public class RoomManager : MonoBehaviourPunCallbacks, ISetupManager
 
     private string GetPlayerName()
     {
+        if (_isMainGame.Value)
+            return "";
+
         if (_playerNameInput.text != "")
             return _playerNameInput.text;
-        else
-            return $"Player{_roomData.Value.PlayerCount + 1}";
+
+        return $"Player{_roomData.Value.PlayerCount + 1}";
     }
 
     public override void OnJoinedRoom()
     {
-        var customProperties = PhotonNetwork.CurrentRoom.CustomProperties;
-        List<string> playerNames = (List<string>)PhotonNetwork.CurrentRoom.CustomProperties["PlayerNames"];
-
-        if (playerNames == null)
-            playerNames = new List<string>();
-
-        if (playerNames.Contains(_playerName.Value))
+        if (_isMainGame.Value)
         {
-            //Player name alread taken - leave room
-            LeaveRoom();
-            return;
+            Debug.Log("Joined room as Main");
         }
+        else
+        {
+            var customProperties = PhotonNetwork.CurrentRoom.CustomProperties;
+            List<string> playerNames = JsonUtility.FromJson<List<string>>((string)PhotonNetwork.CurrentRoom.CustomProperties["PlayerNames"]);
 
-        //Add player name to room properties
-        playerNames.Add(_playerName.Value);
-        customProperties["PlayerNames"] = playerNames;
-        PhotonNetwork.CurrentRoom.SetCustomProperties(customProperties);
+            if (playerNames == null)
+                playerNames = new List<string>();
+
+            if (playerNames.Contains(_playerName.Value))
+            {
+                //Player name alread taken - leave room
+                LeaveRoom();
+                return;
+            }
+
+            //Add player name to room properties
+            playerNames.Add(_playerName.Value);
+            customProperties["PlayerNames"] = JsonUtility.ToJson(playerNames);
+
+            //Get room data
+            _roomData.Value = RoomData.CreateFromJson((string)PhotonNetwork.CurrentRoom.CustomProperties["Data"]);
+
+            PhotonNetwork.CurrentRoom.SetCustomProperties(customProperties);
+        }
 
         string message = $"Joined Room: {PhotonNetwork.CurrentRoom.Name}";
         Debug.Log(message);

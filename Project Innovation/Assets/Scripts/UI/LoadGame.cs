@@ -5,6 +5,7 @@ using UnityEngine;
 public class LoadGame : MonoBehaviour
 {
     [Header("Data")]
+    [SerializeField] private GameEvent _startGameEvent;
     [SerializeField] private RoomDataReference _roomData;
     [SerializeField] private StringReference _gameSceneName;
 
@@ -17,6 +18,6 @@ public class LoadGame : MonoBehaviour
             return;
         }
 
-        PhotonNetwork.LoadLevel(_gameSceneName.Value);
+        _startGameEvent.Raise();
     }
 }

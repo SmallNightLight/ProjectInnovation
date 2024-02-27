@@ -77,7 +77,16 @@ namespace ScriptableArchitecture.Core
                 //This is only for the editor as the build game does not save Scriptable objects across sessions
                 if (InitializeTypeVariable == InitializeType.ResetOnGameStart)
                 {
-                    _value = _startValue;
+                    if (_startValue is IAssignment<T>)
+                    {
+                        //Has a custom copy function (with the IAssignemnt interface)
+                        _value = (_startValue as IAssignment<T>).Copy();
+                    }
+                    else
+                    {
+                        _value = _startValue;
+                    }
+                   
                     Log(_stacktraceVariable, $"Set value to startvalue: {Value}");
                 }
             }

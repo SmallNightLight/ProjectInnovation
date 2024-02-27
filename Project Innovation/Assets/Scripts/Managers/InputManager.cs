@@ -6,7 +6,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
 {
     [Header("Data")]
-    [SerializeField] private bool _isMainGame;
+    [SerializeField] private BoolReference _isMainGame;
     [SerializeField] private PlayersInputReference _playersInput;
 
     [Header("Input")]
@@ -34,7 +34,7 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
 
     public void SendInput()
     {
-        if (_isMainGame) return;
+        if (_isMainGame.Value) return;
 
         if (PhotonNetwork.IsConnected)
         {
@@ -49,7 +49,7 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
     [PunRPC]
     public void GetInput(int player, Vector2 movementInput, Vector2 directionInput, bool interactingInput, bool shootingInput)
     {
-        if (!_isMainGame) return;
+        if (!_isMainGame.Value) return;
 
         //Maybe dont use the player number for name
         string playerName = player.ToString();

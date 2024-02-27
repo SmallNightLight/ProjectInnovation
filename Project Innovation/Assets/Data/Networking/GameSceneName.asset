@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameSceneName
   m_EditorClassIdentifier: 
   VariableType: 0
-  InitializeTypeVariable: 0
+  InitializeTypeVariable: 1
   InitializeTypeRuntimeSet: 0
   _value: MatthiasTest
   _startValue: MatthiasTesting
