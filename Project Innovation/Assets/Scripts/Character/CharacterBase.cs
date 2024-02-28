@@ -74,7 +74,7 @@ public class CharacterBase : MonoBehaviour
             switch (_useKeyboardInput)
             {
                 case InputType.Network:
-                    return _playerInput.DirectionInput;
+                    return new Vector3(-_playerInput.DirectionInput.y, _playerInput.DirectionInput.x);
                 case InputType.Keyboard:
                     Vector3 mousePosition = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.y - transform.position.y));
                     Vector3 direction = mousePosition - transform.position;

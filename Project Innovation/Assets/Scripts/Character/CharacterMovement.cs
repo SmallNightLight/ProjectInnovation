@@ -55,7 +55,7 @@ public class CharacterMovement : MonoBehaviour
     private void SetDirection()
     {
         Vector2 directionInput = _characterBase.DirectionInput;
-        Vector3 direction = new Vector3(-directionInput.y, 0f, directionInput.x).normalized;
+        Vector3 direction = new Vector3(directionInput.x, 0f, directionInput.y).normalized;
 
         if (direction != Vector3.zero)
         {

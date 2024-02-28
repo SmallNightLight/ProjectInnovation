@@ -42,6 +42,12 @@ public class Bullet : MonoBehaviour
                     Vector3 bulletDirection = (transform.position - _startPosition).normalized;
                     characterWeapon.ApplyRecoil(bulletDirection, _weaponData.EnemyRecoil);
                 }
+
+                //Apply damage
+                if (other.gameObject.TryGetComponent(out CharacterHealth characterHealth))
+                {
+                    characterHealth.TakeDamage(_weaponData.DamagePerBullet);
+                }
             }
         }
     }
