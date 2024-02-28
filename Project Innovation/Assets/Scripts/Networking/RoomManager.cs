@@ -8,6 +8,7 @@ public class RoomManager : MonoBehaviourPunCallbacks, ISetupManager
 {
     [Header("Data")]
     [SerializeField] private RoomDataReference _roomData;
+    [SerializeField] private StringReference _roomName;
 
     [SerializeField] private BoolReference _createDefaultRoom;
     [SerializeField] private StringReference _defaultRoomName;
@@ -72,6 +73,8 @@ public class RoomManager : MonoBehaviourPunCallbacks, ISetupManager
 
     public override void OnJoinedRoom()
     {
+        _roomName.Value = PhotonNetwork.CurrentRoom.Name;
+
         if (_isMainGame.Value)
         {
             Debug.Log("Joined room as Main");

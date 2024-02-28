@@ -65,7 +65,7 @@ public class CharacterWeapon : MonoBehaviour
 
     private void Bullet()
     {
-        Vector3 bulletDirection = new Vector3(_characterBase.DirectionInput.x, 0, _characterBase.DirectionInput.y);
+        Vector3 bulletDirection = transform.forward;
         float sprayAngle = Random.Range(-_currentWeaponData.Spread / 2, _currentWeaponData.Spread / 2);
         Quaternion sprayRotation = Quaternion.Euler(0, sprayAngle, 0);
         Vector3 sprayedDirection = (sprayRotation * bulletDirection).normalized;

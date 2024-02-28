@@ -21,6 +21,7 @@ public class TeamLobby : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject _playersParent;
     [SerializeField] private List<GameObject> _visualChildren;
+    [SerializeField] private List<GameObject> _mainGameChildren;
 
 
     public void Update()
@@ -32,8 +33,13 @@ public class TeamLobby : MonoBehaviour
     {
         if (_visualChildren == null) return;
 
-        bool active = !_isMainGame.Value && _team < _roomData.Value.TeamCount;
+        bool active = !_isMainGame.Value;
+        foreach (GameObject child in _mainGameChildren)
+        {
+            child.SetActive(active);
+        }
 
+        active = _team < _roomData.Value.TeamCount;
         foreach (GameObject child in _visualChildren)
         {
             child.SetActive(active);

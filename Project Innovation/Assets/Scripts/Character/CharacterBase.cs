@@ -23,17 +23,10 @@ public class CharacterBase : MonoBehaviour
         None
     }
 
-    private void Start()
-    {
-        if (_useKeyboardInput != InputType.Keyboard)
-        {
-            InitializeCharacter("TestCharacter");
-        }
-    }
-
-    public void InitializeCharacter(string playerName)
+    public void InitializeCharacter(string playerName, int team)
     {
         _playersInput.Value.TryGetPlayerInput(playerName, out _playerInput);
+        _team = team;
     }
 
     public int Team

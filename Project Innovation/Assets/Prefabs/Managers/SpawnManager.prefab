@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1936722863567129250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2466491458031294946}
+  - component: {fileID: 2592517080785729675}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2466491458031294946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936722863567129250}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2592517080785729675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936722863567129250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fc8790420118a4ea8a19fad8ca0956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roomData:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 073465d3b90fbca4aa85bd8cf7025f40, type: 2}
+    _constant:
+      PlayersPerTeam: 2
+      MaxTeams: 4
+      _teams: []
+      _playerCount: 0
+  _playersInput:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 3e1198c9f5cfa0c4bb96723eb9aaa870, type: 2}
+  _teamSpawnPositions:
+  - {x: -8.62, y: 0.5, z: -11.41}
+  - {x: -6.9, y: 0.5, z: 10.29}
+  - {x: 3.4, y: 0.5, z: 10.29}
+  - {x: 3.4, y: 0.5, z: -15.22}
+  _characterPrefab: {fileID: 2150431511745879350, guid: cf5bf973193051645b392baa9ef997a9,
+    type: 3}

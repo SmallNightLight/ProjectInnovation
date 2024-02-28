@@ -32,12 +32,12 @@ MonoBehaviour:
   _startValue:
     PartType: 3
     Bonus: {fileID: 0}
-    DamagePerBullet: 0
+    DamagePerBullet: 1
     Spread: 0
     BulletsPerShot: 0
-    ShotCount: 0
-    FireRate: 0
-    BulletSpeed: 0
+    ShotCount: 2
+    FireRate: -0.1
+    BulletSpeed: 5
     Range: 0
     Recoil: 0
     EnemyRecoil: 0

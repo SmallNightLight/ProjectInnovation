@@ -540,9 +540,10 @@ MonoBehaviour:
     type: 3}
   _playersParent: {fileID: 1136367903738698615}
   _visualChildren:
-  - {fileID: 8000600641500091596}
   - {fileID: 2214130234400110363}
   - {fileID: 1136367903738698615}
+  _mainGameChildren:
+  - {fileID: 8000600641500091596}
 --- !u!114 &103902498495036527
 MonoBehaviour:
   m_ObjectHideFlags: 0

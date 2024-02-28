@@ -52,6 +52,10 @@ MonoBehaviour:
   _playersInput:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 3e1198c9f5cfa0c4bb96723eb9aaa870, type: 2}
+  _playerName:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 897eb5384847cfb4e9f7e10f774c16d9, type: 2}
+    _constant: 
   _movementInput:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 1327df6f65e7d1a41b5066c79d8d600b, type: 2}

@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
     [SerializeField] private PlayersInputReference _playersInput;
 
     [Header("Input")]
+    [SerializeField] private StringReference _playerName;
     [SerializeField] private Vector2Reference _movementInput;
     [SerializeField] private Vector2Reference _directionInput;
     [SerializeField] private BoolReference _interactingInput;
@@ -38,7 +39,7 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
 
         if (PhotonNetwork.IsConnected)
         {
-            _photonView.RPC("GetInput", RpcTarget.Others, _photonView.OwnerActorNr, _movementInput.Value, _directionInput.Value, _interactingInput.Value, _shootingInput.Value);
+            _photonView.RPC("GetInput", RpcTarget.Others, _playerName.Value, _movementInput.Value, _directionInput.Value, _interactingInput.Value, _shootingInput.Value);
         }
         else
         {
@@ -47,30 +48,14 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
     }
 
     [PunRPC]
-    public void GetInput(int player, Vector2 movementInput, Vector2 directionInput, bool interactingInput, bool shootingInput)
+    public void GetInput(string playerName, Vector2 movementInput, Vector2 directionInput, bool interactingInput, bool shootingInput)
     {
         if (!_isMainGame.Value) return;
 
-        //Maybe dont use the player number for name
-        string playerName = player.ToString();
-        
         if (!_playersInput.Value.TrySetPlayerInput(playerName, movementInput, directionInput, interactingInput, shootingInput))
         {
-            //Failed to find the player, so add a new player
-            AddNewPlayer(playerName);
+            //Failed to find the player
+            Debug.Log("Failed");
         }
-
-        Debug.Log($"Player: {player}\nMovement: {movementInput}\nDirectionInput: {directionInput}\n Interacting: {interactingInput}\nShooting: {shootingInput}");
-    }
-
-    public void AddNewPlayer(string playerName)
-    {
-        Debug.Log("Added player");
-
-        //Create new character gameObject
-        Instantiate(_characterPrefab);
-        
-         //Add player data   
-        _playersInput.Value.AddNewPlayer(playerName);
     }
 }

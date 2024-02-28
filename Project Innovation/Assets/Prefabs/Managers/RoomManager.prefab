@@ -48,17 +48,18 @@ MonoBehaviour:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 073465d3b90fbca4aa85bd8cf7025f40, type: 2}
     _constant:
-      _teamStartPosition: []
       PlayersPerTeam: 2
       MaxTeams: 4
+      _teams: []
+      _playerCount: 0
+  _roomName:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: a1e14788ec89dd24d9e560a0de013351, type: 2}
+    _constant: 
   _createDefaultRoom:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: b97636b0eb0007643b7e4e8b1f06fcbe, type: 2}
     _constant: 0
-  _gameSceneName:
-    _isVariable: 1
-    _variable: {fileID: 11400000, guid: d7ec94c2b0fda6e429a7807336f9b6a9, type: 2}
-    _constant: 
   _defaultRoomName:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 13335b4ae31e07049af2944a6acbabd0, type: 2}
