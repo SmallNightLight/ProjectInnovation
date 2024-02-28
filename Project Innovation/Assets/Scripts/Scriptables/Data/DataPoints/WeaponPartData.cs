@@ -7,19 +7,19 @@ namespace ScriptableArchitecture.Data
     public class WeaponPartData : IDataPoint
     {
         [Header("Base")]
+        public WeaponDataVariable MainWeapon;
         public WeaponPartType PartType;
-        [Tooltip("The bonus for when the parts with the same bonus are together. Don't set it when PartType is Bonus")] public WeaponPartDataVariable Bonus;
 
-        [Header("Stats")]
-        [Tooltip("The damage per individual bullet")] public float DamagePerBullet;
-        [Tooltip("The amount of spread in degrees")] public float Spread;
-        [Tooltip("The amount of bullets per shot")] public int BulletsPerShot;
-        [Tooltip("The amount of shots")] public int ShotCount;
-        [Tooltip("The time between the shots")] public float FireRate;
-        [Tooltip("The speed of the bullets")] public float BulletSpeed;
-        [Tooltip("The range of the shot / bullet")] public float Range;
-        [Tooltip("The amount of recoil for the player after a shot")] public float Recoil;
-        [Tooltip("The amount of recoil for the enemy after getting hit")] public float EnemyRecoil;
+        [Header("Percentages")]
+        [Tooltip("% of the damage per individual bullet")] public float DamagePerBullet;
+        [Tooltip("% of the amount of spread in degrees")] public float Spread;
+        [Tooltip("% of the amount of bullets per shot")] public int BulletsPerShot;
+        [Tooltip("% of the amount of shots")] public int ShotCount;
+        [Tooltip("% of the time between the shots")] public float FireRate;
+        [Tooltip("% of the speed of the bullets")] public float BulletSpeed;
+        [Tooltip("% of the range of the shot / bullet")] public float Range;
+        [Tooltip("% of the amount of recoil for the player after a shot")] public float Recoil;
+        [Tooltip("% of the amount of recoil for the enemy after getting hit")] public float EnemyRecoil;
 
         [Header("Prefabs")]
         public GameObject PartPrefab;

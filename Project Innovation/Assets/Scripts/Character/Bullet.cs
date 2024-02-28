@@ -9,10 +9,10 @@ public class Bullet : MonoBehaviour
 
     [Header("ScriptData")]
     private Vector3 _startPosition;
-    private WeaponPartData _weaponData;
+    private WeaponData _weaponData;
     private int _team;
 
-    public void InitializeBullet(WeaponPartData weaponData, Vector3 direction, int team)
+    public void InitializeBullet(WeaponData weaponData, Vector3 direction, int team)
     {
         _rigidbody = GetComponent<Rigidbody>();
         _rigidbody.AddForce(direction.normalized * weaponData.BulletSpeed * 100);

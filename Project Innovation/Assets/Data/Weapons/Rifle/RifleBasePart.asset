@@ -13,43 +13,43 @@ MonoBehaviour:
   m_Name: RifleBasePart
   m_EditorClassIdentifier: 
   VariableType: 0
-  InitializeTypeVariable: 1
+  InitializeTypeVariable: 2
   InitializeTypeRuntimeSet: 0
   _value:
+    MainWeapon: {fileID: 11400000, guid: cefcc42cbffcb444eb05f1f6544268c5, type: 2}
     PartType: 1
-    Bonus: {fileID: 11400000, guid: 0481b2fafe389af49a49489eb9057e27, type: 2}
-    DamagePerBullet: 5
-    Spread: 5
-    BulletsPerShot: 1
-    ShotCount: 5
-    FireRate: 0.3
-    BulletSpeed: 30
-    Range: 15
-    Recoil: 0.5
-    EnemyRecoil: 3
+    DamagePerBullet: 50
+    Spread: 200
+    BulletsPerShot: 100
+    ShotCount: 100
+    FireRate: 100
+    BulletSpeed: 70
+    Range: 50
+    Recoil: 250
+    EnemyRecoil: 30
     PartPrefab: {fileID: 6919341826384139201, guid: d59ab9977fa92e940a6457a97cc7ae26,
       type: 3}
     ItemPrefab: {fileID: 0}
   _startValue:
+    MainWeapon: {fileID: 11400000, guid: cefcc42cbffcb444eb05f1f6544268c5, type: 2}
     PartType: 1
-    Bonus: {fileID: 11400000, guid: 0481b2fafe389af49a49489eb9057e27, type: 2}
-    DamagePerBullet: 5
-    Spread: 5
-    BulletsPerShot: 1
-    ShotCount: 5
-    FireRate: 0.3
-    BulletSpeed: 30
-    Range: 15
-    Recoil: 0.5
-    EnemyRecoil: 3
+    DamagePerBullet: 50
+    Spread: 200
+    BulletsPerShot: 100
+    ShotCount: 100
+    FireRate: 100
+    BulletSpeed: 70
+    Range: 50
+    Recoil: 250
+    EnemyRecoil: 30
     PartPrefab: {fileID: 6919341826384139201, guid: d59ab9977fa92e940a6457a97cc7ae26,
       type: 3}
     ItemPrefab: {fileID: 0}
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:
+    MainWeapon: {fileID: 0}
     PartType: 0
-    Bonus: {fileID: 0}
     DamagePerBullet: 0
     Spread: 0
     BulletsPerShot: 0

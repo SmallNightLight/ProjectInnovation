@@ -13,43 +13,43 @@ MonoBehaviour:
   m_Name: RifleBarrelPart
   m_EditorClassIdentifier: 
   VariableType: 0
-  InitializeTypeVariable: 1
+  InitializeTypeVariable: 2
   InitializeTypeRuntimeSet: 0
   _value:
+    MainWeapon: {fileID: 11400000, guid: cefcc42cbffcb444eb05f1f6544268c5, type: 2}
     PartType: 0
-    Bonus: {fileID: 11400000, guid: 0481b2fafe389af49a49489eb9057e27, type: 2}
-    DamagePerBullet: 0
-    Spread: 0
+    DamagePerBullet: 25
+    Spread: -80
     BulletsPerShot: 0
     ShotCount: 0
     FireRate: 0
-    BulletSpeed: 0
+    BulletSpeed: 15
     Range: 0
     Recoil: 0
-    EnemyRecoil: 0
+    EnemyRecoil: 70
     PartPrefab: {fileID: 832793835084634208, guid: 6b750f6d5bc600f41931e8ece51b49b7,
       type: 3}
     ItemPrefab: {fileID: 0}
   _startValue:
+    MainWeapon: {fileID: 11400000, guid: cefcc42cbffcb444eb05f1f6544268c5, type: 2}
     PartType: 0
-    Bonus: {fileID: 11400000, guid: 0481b2fafe389af49a49489eb9057e27, type: 2}
-    DamagePerBullet: 0
-    Spread: 0
+    DamagePerBullet: 25
+    Spread: -80
     BulletsPerShot: 0
     ShotCount: 0
     FireRate: 0
-    BulletSpeed: 0
+    BulletSpeed: 15
     Range: 0
     Recoil: 0
-    EnemyRecoil: 0
+    EnemyRecoil: 70
     PartPrefab: {fileID: 832793835084634208, guid: 6b750f6d5bc600f41931e8ece51b49b7,
       type: 3}
     ItemPrefab: {fileID: 0}
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:
+    MainWeapon: {fileID: 0}
     PartType: 0
-    Bonus: {fileID: 0}
     DamagePerBullet: 0
     Spread: 0
     BulletsPerShot: 0

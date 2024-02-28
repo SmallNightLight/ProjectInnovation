@@ -16,39 +16,40 @@ MonoBehaviour:
   InitializeTypeVariable: 2
   InitializeTypeRuntimeSet: 0
   _value:
+    MainWeapon: {fileID: 11400000, guid: cefcc42cbffcb444eb05f1f6544268c5, type: 2}
     PartType: 0
-    Bonus: {fileID: 0}
-    DamagePerBullet: 0
-    Spread: 0
+    DamagePerBullet: 25
+    Spread: -80
     BulletsPerShot: 0
     ShotCount: 0
     FireRate: 0
-    BulletSpeed: 0
+    BulletSpeed: 15
     Range: 0
     Recoil: 0
-    EnemyRecoil: 0
-    PartPrefab: {fileID: 0}
+    EnemyRecoil: 70
+    PartPrefab: {fileID: 832793835084634208, guid: 6b750f6d5bc600f41931e8ece51b49b7,
+      type: 3}
     ItemPrefab: {fileID: 0}
   _startValue:
+    MainWeapon: {fileID: 11400000, guid: c7d358e561e377f46b72e09eb36985a2, type: 2}
     PartType: 0
-    Bonus: {fileID: 11400000, guid: 7bc13e97e548f784a8c4fe73ed8cdc5b, type: 2}
-    DamagePerBullet: 0
-    Spread: 0
+    DamagePerBullet: 25
+    Spread: -80
     BulletsPerShot: 0
     ShotCount: 0
     FireRate: 0
-    BulletSpeed: 0
+    BulletSpeed: 15
     Range: 0
     Recoil: 0
-    EnemyRecoil: 0
+    EnemyRecoil: 70
     PartPrefab: {fileID: 3487344379274095889, guid: ec90699601025d54a981c13c1bc4a6da,
       type: 3}
     ItemPrefab: {fileID: 0}
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:
+    MainWeapon: {fileID: 0}
     PartType: 0
-    Bonus: {fileID: 0}
     DamagePerBullet: 0
     Spread: 0
     BulletsPerShot: 0

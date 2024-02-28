@@ -9,15 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57ee5c2d7200e324cac527e1c8c5a15a, type: 3}
-  m_Name: RifleBonus
+  m_Script: {fileID: 11500000, guid: bf7b14e717542e9459d4694e9fca494f, type: 3}
+  m_Name: Shotgun
   m_EditorClassIdentifier: 
   VariableType: 0
   InitializeTypeVariable: 2
   InitializeTypeRuntimeSet: 0
   _value:
-    MainWeapon: {fileID: 0}
-    PartType: 0
     DamagePerBullet: 0
     Spread: 0
     BulletsPerShot: 0
@@ -27,27 +25,21 @@ MonoBehaviour:
     Range: 0
     Recoil: 0
     EnemyRecoil: 0
-    PartPrefab: {fileID: 0}
-    ItemPrefab: {fileID: 0}
+    Bonus: {fileID: 0}
   _startValue:
-    MainWeapon: {fileID: 11400000, guid: cefcc42cbffcb444eb05f1f6544268c5, type: 2}
-    PartType: 3
-    DamagePerBullet: 10
-    Spread: 0
-    BulletsPerShot: 0
-    ShotCount: 0
-    FireRate: -0.05
-    BulletSpeed: 0
-    Range: 10
-    Recoil: 0
-    EnemyRecoil: 0
-    PartPrefab: {fileID: 0}
-    ItemPrefab: {fileID: 0}
+    DamagePerBullet: 1
+    Spread: 5
+    BulletsPerShot: 25
+    ShotCount: 4
+    FireRate: 1
+    BulletSpeed: 30
+    Range: 7
+    Recoil: 3
+    EnemyRecoil: 3
+    Bonus: {fileID: 11400000, guid: 50ae4d0d46360014fa0befaf05b8e74a, type: 2}
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:
-    MainWeapon: {fileID: 0}
-    PartType: 0
     DamagePerBullet: 0
     Spread: 0
     BulletsPerShot: 0
@@ -57,5 +49,4 @@ MonoBehaviour:
     Range: 0
     Recoil: 0
     EnemyRecoil: 0
-    PartPrefab: {fileID: 0}
-    ItemPrefab: {fileID: 0}
+    Bonus: {fileID: 0}

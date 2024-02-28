@@ -9,7 +9,7 @@ public class CharacterWeapon : MonoBehaviour
     [Header("Data")]
     [SerializeField] private List<WeaponPartDataReference> _currentParts = new List<WeaponPartDataReference>();
 
-    private WeaponPartData _currentWeaponData;
+    private WeaponData _currentWeaponData;
 
     [Header("Settings")]
     [SerializeField] private bool _infiniteAmmo;
@@ -81,9 +81,10 @@ public class CharacterWeapon : MonoBehaviour
         _rigidbody.AddForce(direction * recoil, ForceMode.Impulse);
     }
 
+    [ContextMenu("Calculate weapon")]
     public void CalculateWeapon()
     {
-        _currentWeaponData = new WeaponPartData();
+        _currentWeaponData = new WeaponData();
 
         foreach(WeaponPartDataReference part in _currentParts)
             AddWeaponPartData(part.Value);
@@ -94,15 +95,17 @@ public class CharacterWeapon : MonoBehaviour
 
     private void AddWeaponPartData(WeaponPartData part)
     {
-        _currentWeaponData.DamagePerBullet += part.DamagePerBullet;
-        _currentWeaponData.Spread += part.Spread;
-        _currentWeaponData.BulletsPerShot += part.BulletsPerShot;
-        _currentWeaponData.ShotCount += part.ShotCount;
-        _currentWeaponData.FireRate += part.FireRate;
-        _currentWeaponData.BulletSpeed += part.BulletSpeed;
-        _currentWeaponData.Range += part.Range;
-        _currentWeaponData.Recoil += part.Recoil;
-        _currentWeaponData.EnemyRecoil += part.EnemyRecoil;
+        WeaponData mainWeapon = part.MainWeapon.Value;
+
+        _currentWeaponData.DamagePerBullet += mainWeapon.DamagePerBullet * part.DamagePerBullet / 100;
+        _currentWeaponData.Spread += mainWeapon.Spread * part.Spread / 100;
+        _currentWeaponData.BulletsPerShot += mainWeapon.BulletsPerShot * part.BulletsPerShot / 100;
+        _currentWeaponData.ShotCount += mainWeapon.ShotCount * part.ShotCount / 100;
+        _currentWeaponData.FireRate += mainWeapon.FireRate * part.FireRate / 100;
+        _currentWeaponData.BulletSpeed += mainWeapon.BulletSpeed * part.BulletSpeed / 100;
+        _currentWeaponData.Range += mainWeapon.Range * part.Range / 100;
+        _currentWeaponData.Recoil += mainWeapon.Recoil * part.Recoil / 100;
+        _currentWeaponData.EnemyRecoil += mainWeapon.EnemyRecoil * part.EnemyRecoil / 100;
     }
 
     private bool HasWeaponType(WeaponPartType type)
@@ -144,14 +147,13 @@ public class CharacterWeapon : MonoBehaviour
             return false;
         }
 
-        if (_currentParts.All(x => x.Value.Bonus == _currentParts.First().Value.Bonus))
+        if (_currentParts.All(x => x.Value.MainWeapon == _currentParts.First().Value.MainWeapon))
         {
-            bonus = _currentParts[0].Value.Bonus.Value;
+            bonus = _currentParts[0].Value.MainWeapon.Value.Bonus.Value;
             return true;
         }
 
         bonus = null;
         return false;
     }
-
 }

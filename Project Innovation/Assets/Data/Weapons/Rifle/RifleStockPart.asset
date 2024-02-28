@@ -16,8 +16,8 @@ MonoBehaviour:
   InitializeTypeVariable: 2
   InitializeTypeRuntimeSet: 0
   _value:
+    MainWeapon: {fileID: 0}
     PartType: 0
-    Bonus: {fileID: 0}
     DamagePerBullet: 0
     Spread: 0
     BulletsPerShot: 0
@@ -30,16 +30,16 @@ MonoBehaviour:
     PartPrefab: {fileID: 0}
     ItemPrefab: {fileID: 0}
   _startValue:
+    MainWeapon: {fileID: 11400000, guid: cefcc42cbffcb444eb05f1f6544268c5, type: 2}
     PartType: 2
-    Bonus: {fileID: 11400000, guid: 0481b2fafe389af49a49489eb9057e27, type: 2}
-    DamagePerBullet: 0
-    Spread: 0
+    DamagePerBullet: 25
+    Spread: -20
     BulletsPerShot: 0
     ShotCount: 0
     FireRate: 0
-    BulletSpeed: 0
-    Range: 0
-    Recoil: 0
+    BulletSpeed: 15
+    Range: 50
+    Recoil: -150
     EnemyRecoil: 0
     PartPrefab: {fileID: 7619272932377979488, guid: dbac48efe1b2cd748bed2523f9ef841d,
       type: 3}
@@ -47,8 +47,8 @@ MonoBehaviour:
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:
+    MainWeapon: {fileID: 0}
     PartType: 0
-    Bonus: {fileID: 0}
     DamagePerBullet: 0
     Spread: 0
     BulletsPerShot: 0
