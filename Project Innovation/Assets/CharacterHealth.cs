@@ -40,6 +40,8 @@ public class CharacterHealth : MonoBehaviour
         Debug.Log("Player died");
     }
 
+    
+
     private void UpdateHealthUI()
     {
         _healthSlider.value = Mathf.Clamp(((_startHealth.Value / 100) * _health) / 100, 0, _startHealth.Value);
