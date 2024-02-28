@@ -35,30 +35,22 @@ public class RoomManager : MonoBehaviourPunCallbacks, ISetupManager
 
     private void CreateDefaultRoom()
     {
-        SetPlayerName();
-
         PhotonNetwork.CreateRoom(_defaultRoomName.Value);
     }
 
     public void CreateRoom()
     {
-        SetPlayerName();
-
         PhotonNetwork.CreateRoom(_roomNameInput.text);
     }
 
     public void JoinRoom()
     {
-        SetPlayerName();
-
         PhotonNetwork.JoinRoom(_roomNameInput.text);
     }
 
     public void LeaveRoom()
     {
-        _UIMessageEvent.Raise($"Room already has a player with the name: {_playerName.Value}");
-        Debug.Log($"Room already has a player with the name: {_playerName.Value}");
-
+        Log($"Room already has a player with the name: {_playerName.Value}");
         PhotonNetwork.LeaveRoom(false);
     }
 
@@ -83,47 +75,44 @@ public class RoomManager : MonoBehaviourPunCallbacks, ISetupManager
         if (_isMainGame.Value)
         {
             Debug.Log("Joined room as Main");
+            SetPlayerName();
         }
         else
         {
-            var customProperties = PhotonNetwork.CurrentRoom.CustomProperties;
-            List<string> playerNames = JsonUtility.FromJson<List<string>>((string)PhotonNetwork.CurrentRoom.CustomProperties["PlayerNames"]);
-
-            if (playerNames == null)
-                playerNames = new List<string>();
-
-            if (playerNames.Contains(_playerName.Value))
-            {
-                //Player name alread taken - leave room
-                LeaveRoom();
-                return;
-            }
-
-            //Add player name to room properties
-            playerNames.Add(_playerName.Value);
-            customProperties["PlayerNames"] = JsonUtility.ToJson(playerNames); //doesnt work gives {}
-
             //Get room data
             _roomData.Value = RoomData.CreateFromJson((string)PhotonNetwork.CurrentRoom.CustomProperties["Data"]);
+            SetPlayerName();
 
-            PhotonNetwork.CurrentRoom.SetCustomProperties(customProperties);
+            List<TeamData> teams = _roomData.Value.GetTeams();
+
+            for (int i = 0; i < teams.Count; i++)
+            {
+                if (teams[i].Players.Contains(_playerName.Value))
+                {
+                    //Player name alread taken - leave room
+                    LeaveRoom();
+                    return;
+                }
+            }
         }
 
-        string message = $"Joined Room: {PhotonNetwork.CurrentRoom.Name}";
-        Debug.Log(message);
+        Log($"Joined Room: {PhotonNetwork.CurrentRoom.Name}");
 
-        _UIMessageEvent.Raise(message);
         _inTeamLobby.Raise(true);
         _joinedRoomEvent.Raise();
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
-        Debug.Log(message);
-        _UIMessageEvent.Raise(message);
+        Log(message);
     }
 
     public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+        Log(message);
+    }
+
+    public void Log(string message)
     {
         Debug.Log(message);
         _UIMessageEvent.Raise(message);
