@@ -210,18 +210,21 @@ public class CharacterWeapon : MonoBehaviour
         {
             if (other.gameObject.TryGetComponent(out Item item))
             {
-                AddWeaponPart(item.WeaponPartData);
-                Destroy(other.gameObject);
+                if (TryAddWeaponPart(item.WeaponPartData))
+                    Destroy(other.gameObject);
             }
         }
     }
 
-    private void AddWeaponPart(WeaponPartDataReference part)
+    private bool TryAddWeaponPart(WeaponPartDataReference part)
     {
         if (!HasWeaponType(part.Value.PartType))
         {
             _currentParts.Add(part);
             CalculateWeapon();
+            return true;
         }
+
+        return false;
     }
 }

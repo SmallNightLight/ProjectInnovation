@@ -249,7 +249,7 @@ MonoBehaviour:
   _playersInput:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 3e1198c9f5cfa0c4bb96723eb9aaa870, type: 2}
-  _useKeyboardInput: 1
+  _useKeyboardInput: 0
   _team: 1
   _camera: {fileID: 0}
 --- !u!114 &1204767217530004696
