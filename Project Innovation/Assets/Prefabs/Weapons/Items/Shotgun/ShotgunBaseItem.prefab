@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 8212643666107755314}
   - component: {fileID: 1740007628305818859}
   - component: {fileID: 3980576112467298892}
+  - component: {fileID: 1689365600145858266}
+  - component: {fileID: 9203235728972754780}
   m_Layer: 0
-  m_Name: ShotgunBasePart
-  m_TagString: Untagged
+  m_Name: ShotgunBaseItem
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.006, y: 0.006, z: 0.006}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +85,53 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1689365600145858266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3421277828176001310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69373589a1deaa241b03755381a05dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponPartData:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: f9eb399e16f4f0a47b281d0bf971b8fc, type: 2}
+    _constant:
+      MainWeapon: {fileID: 0}
+      PartType: 0
+      DamagePerBullet: 0
+      Spread: 0
+      BulletsPerShot: 0
+      ShotCount: 0
+      FireRate: 0
+      BulletSpeed: 0
+      Range: 0
+      Recoil: 0
+      EnemyRecoil: 0
+      PartPrefab: {fileID: 0}
+      ItemPrefab: {fileID: 0}
+--- !u!135 &9203235728972754780
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3421277828176001310}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 120
+  m_Center: {x: 0, y: 0, z: 0}

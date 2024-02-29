@@ -65,6 +65,9 @@ public class CharacterWeapon : MonoBehaviour
 
     private void Bullet()
     {
+        //Only shoot when has a base part
+        if (!HasWeaponType(WeaponPartType.Base)) return;
+
         Vector3 bulletDirection = transform.forward;
         float sprayAngle = Random.Range(-_currentWeaponData.Spread / 2, _currentWeaponData.Spread / 2);
         Quaternion sprayRotation = Quaternion.Euler(0, sprayAngle, 0);
@@ -74,6 +77,13 @@ public class CharacterWeapon : MonoBehaviour
         bullet.InitializeBullet(_currentWeaponData, sprayedDirection, _characterBase.Team);
 
         ApplyRecoil(-sprayedDirection, _currentWeaponData.Recoil);
+
+        if (_shotCount >= _currentWeaponData.ShotCount && !_infiniteAmmo)
+        {
+            //No more bullets left - remove all parts
+            _currentParts.Clear();
+            CalculateWeapon();
+        }
     }
 
     public void ApplyRecoil(Vector3 direction, float recoil)
@@ -141,7 +151,7 @@ public class CharacterWeapon : MonoBehaviour
 
     private bool HasBonus(out WeaponPartData bonus)
     {
-        if (_currentParts == null && _currentParts.Count != 3) //Change this when more weapon parts
+        if (_currentParts == null || _currentParts.Count != 3) //Change this when more weapon parts
         {
             bonus = null;
             return false;
@@ -155,5 +165,27 @@ public class CharacterWeapon : MonoBehaviour
 
         bonus = null;
         return false;
+    }
+
+    //Weapon part pickup
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Item")
+        {
+            if (other.gameObject.TryGetComponent(out Item item))
+            {
+                AddWeaponPart(item.WeaponPartData);
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
+    private void AddWeaponPart(WeaponPartDataReference part)
+    {
+        if (!HasWeaponType(part.Value.PartType))
+        {
+            _currentParts.Add(part);
+            CalculateWeapon();
+        }
     }
 }
