@@ -82,8 +82,7 @@ public class CharacterWeapon : MonoBehaviour
         if (_shotCount >= _currentWeaponData.ShotCount && !_infiniteAmmo)
         {
             //No more bullets left - remove all parts
-            _currentParts.Clear();
-            CalculateWeapon();
+            RemoveCurrentWeapon();
         }
     }
 
@@ -104,8 +103,13 @@ public class CharacterWeapon : MonoBehaviour
             AddWeaponPartData(bonus);
 
         UpdateWeaponVisuals();
+    }
 
-        _bulletExitPoint = _parentWeapon.GetComponentInChildren<BulletExitPoint>();
+    public void RemoveCurrentWeapon()
+    {
+        _currentParts.Clear();
+        CalculateWeapon();
+        _shotCount = 0;
     }
 
     public void UpdateWeaponVisuals()
@@ -115,9 +119,23 @@ public class CharacterWeapon : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach(WeaponPartDataReference part in _currentParts)
+        _bulletExitPoint = null;
+
+        List<(WeaponPartType, GameObject)> newParts = new List<(WeaponPartType, GameObject)>();
+
+        foreach (WeaponPartDataReference part in _currentParts)
         {
-            Instantiate(part.Value.PartPrefab, _parentWeapon.transform);
+            GameObject partObject = Instantiate(part.Value.PartPrefab, _parentWeapon.transform);
+            newParts.Add((part.Value.PartType, partObject));
+
+            if (part.Value.PartType == WeaponPartType.Barrel)
+                _bulletExitPoint = partObject.GetComponentInChildren<BulletExitPoint>();
+        }
+
+        foreach(var part in newParts)
+        {
+            if (part.Item1 == WeaponPartType.Base)
+                _bulletExitPoint = part.Item2.GetComponentInChildren<BulletExitPoint>();
         }
     }
 
