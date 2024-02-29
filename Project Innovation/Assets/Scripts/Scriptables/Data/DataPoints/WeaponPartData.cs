@@ -23,7 +23,6 @@ namespace ScriptableArchitecture.Data
 
         [Header("Prefabs")]
         public GameObject PartPrefab;
-        public GameObject ItemPrefab;
     }
 
     public enum WeaponPartType

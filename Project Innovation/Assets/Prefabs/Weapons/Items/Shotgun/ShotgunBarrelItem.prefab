@@ -113,7 +113,6 @@ MonoBehaviour:
       Recoil: 0
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
-      ItemPrefab: {fileID: 0}
 --- !u!135 &1931979604331794000
 SphereCollider:
   m_ObjectHideFlags: 0

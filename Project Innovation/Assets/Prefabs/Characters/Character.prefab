@@ -232,6 +232,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1732390856242512149}
+  - {fileID: 148095722990650359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4714317251677256038
@@ -249,8 +250,8 @@ MonoBehaviour:
   _playersInput:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 3e1198c9f5cfa0c4bb96723eb9aaa870, type: 2}
-  _useKeyboardInput: 0
-  _team: 0
+  _useKeyboardInput: 1
+  _team: 1
   _camera: {fileID: 0}
 --- !u!114 &1204767217530004696
 MonoBehaviour:
@@ -280,58 +281,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1deb1f7c074bd344fad52dabe84f8f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentParts:
-  - _isVariable: 1
-    _variable: {fileID: 11400000, guid: 64f7054f2585f15459c92fb9b4da372b, type: 2}
-    _constant:
-      PartType: 0
-      Bonus: {fileID: 0}
-      DamagePerBullet: 0
-      Spread: 0
-      BulletsPerShot: 0
-      ShotCount: 0
-      FireRate: 0
-      BulletSpeed: 0
-      Range: 0
-      Recoil: 0
-      EnemyRecoil: 0
-      PartPrefab: {fileID: 0}
-      ItemPrefab: {fileID: 0}
-  - _isVariable: 1
-    _variable: {fileID: 11400000, guid: c83be9ddbc9af17428502e32d40ff3ad, type: 2}
-    _constant:
-      PartType: 0
-      Bonus: {fileID: 0}
-      DamagePerBullet: 0
-      Spread: 0
-      BulletsPerShot: 0
-      ShotCount: 0
-      FireRate: 0
-      BulletSpeed: 0
-      Range: 0
-      Recoil: 0
-      EnemyRecoil: 0
-      PartPrefab: {fileID: 0}
-      ItemPrefab: {fileID: 0}
-  - _isVariable: 1
-    _variable: {fileID: 11400000, guid: 877630f942c10f64e83f7825ad48c338, type: 2}
-    _constant:
-      PartType: 0
-      Bonus: {fileID: 0}
-      DamagePerBullet: 0
-      Spread: 0
-      BulletsPerShot: 0
-      ShotCount: 0
-      FireRate: 0
-      BulletSpeed: 0
-      Range: 0
-      Recoil: 0
-      EnemyRecoil: 0
-      PartPrefab: {fileID: 0}
-      ItemPrefab: {fileID: 0}
+  _currentParts: []
   _infiniteAmmo: 1
   _bulletPrefab: {fileID: 946379143936500698, guid: 6da955cb4f8c63f4fb1085372a681db9,
     type: 3}
+  _parentWeapon: {fileID: 8191382611689675293}
 --- !u!114 &4537153627206197002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,6 +564,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8191382611689675293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 148095722990650359}
+  m_Layer: 0
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &148095722990650359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8191382611689675293}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.88, y: -0.04, z: -0.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2622674270025212826}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &8689797391922881391
 GameObject:
   m_ObjectHideFlags: 0

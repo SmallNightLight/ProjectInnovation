@@ -22,19 +22,20 @@ public class CharacterWeapon : MonoBehaviour
     [Header("Components")]
     private CharacterBase _characterBase;
     private Rigidbody _rigidbody;
+    [SerializeField] private GameObject _parentWeapon;
+    private BulletExitPoint _bulletExitPoint;
 
     private void Start()
     {
         TryGetComponent(out _characterBase);
         TryGetComponent(out _rigidbody);
+
+        CalculateWeapon();
     }
 
     private void Update()
     {
         UpdateShooting();
-
-        //Test
-        CalculateWeapon();
     }
 
     private void UpdateShooting()
@@ -66,14 +67,14 @@ public class CharacterWeapon : MonoBehaviour
     private void Bullet()
     {
         //Only shoot when has a base part
-        if (!HasWeaponType(WeaponPartType.Base)) return;
+        if (!HasWeaponType(WeaponPartType.Base) || _bulletExitPoint == null) return;
 
         Vector3 bulletDirection = transform.forward;
         float sprayAngle = Random.Range(-_currentWeaponData.Spread / 2, _currentWeaponData.Spread / 2);
         Quaternion sprayRotation = Quaternion.Euler(0, sprayAngle, 0);
         Vector3 sprayedDirection = (sprayRotation * bulletDirection).normalized;
 
-        Bullet bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity).GetComponent<Bullet>();
+        Bullet bullet = Instantiate(_bulletPrefab, _bulletExitPoint.transform.position, Quaternion.identity).GetComponent<Bullet>();
         bullet.InitializeBullet(_currentWeaponData, sprayedDirection, _characterBase.Team);
 
         ApplyRecoil(-sprayedDirection, _currentWeaponData.Recoil);
@@ -101,6 +102,23 @@ public class CharacterWeapon : MonoBehaviour
 
         if (HasBonus(out WeaponPartData bonus))
             AddWeaponPartData(bonus);
+
+        UpdateWeaponVisuals();
+
+        _bulletExitPoint = _parentWeapon.GetComponentInChildren<BulletExitPoint>();
+    }
+
+    public void UpdateWeaponVisuals()
+    {
+        foreach (Transform child in _parentWeapon.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach(WeaponPartDataReference part in _currentParts)
+        {
+            Instantiate(part.Value.PartPrefab, _parentWeapon.transform);
+        }
     }
 
     private void AddWeaponPartData(WeaponPartData part)
