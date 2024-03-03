@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da82e0f9fd8f63e42a429965ccdbd1dc, type: 3}
   m_Name: PreviewCharacterEvent
   m_EditorClassIdentifier: 
-  VariableType: 2
+  VariableType: 1
   InitializeTypeVariable: 0
   InitializeTypeRuntimeSet: 0
   _value:
