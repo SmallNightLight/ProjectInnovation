@@ -167,6 +167,18 @@ namespace ScriptableArchitecture.Data
             return _teams[team];
         }
 
+        public List<string> GetPlayerNames()
+        {
+            List<string> names = new List<string>();
+
+            foreach (TeamData team in _teams)
+            {
+                names.AddRange(team.Players);
+            }
+
+            return names;
+        }
+
         public int PlayerCount => _playerCount;
 
         public int TeamCount
@@ -184,6 +196,4 @@ namespace ScriptableArchitecture.Data
             }
         }
     }
-
-    //public interface RoomDataAssignment : RoomDataAssignment<RoomData> { }
 }

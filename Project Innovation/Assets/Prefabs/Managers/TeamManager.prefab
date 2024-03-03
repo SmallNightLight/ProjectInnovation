@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8527226301394793644}
   - component: {fileID: 7058000486541113615}
   - component: {fileID: 6918311072838094030}
+  - component: {fileID: 2283842638897100609}
   - component: {fileID: 6667191993156605536}
   - component: {fileID: 1249524184928145384}
   - component: {fileID: 8076533424790181138}
@@ -76,6 +77,16 @@ MonoBehaviour:
     _isVariable: 0
     _variable: {fileID: 0}
     _constant: Controller
+  _enterCharacterSelection: {fileID: 11400000, guid: 8d5a5ba4441cac74fb878a04a9860035,
+    type: 2}
+  _playerCharacters:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 41579ad36b159c941a64aeba22f2a100, type: 2}
+  _previewCharacters:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 0b5f3c7298c458a43b61fea8a183e4de, type: 2}
+  _previewChangeEvent: {fileID: 11400000, guid: 46d403216ae39e24eaaa641615f08f7e,
+    type: 2}
 --- !u!114 &8527226301394793644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +156,34 @@ MonoBehaviour:
       - m_Target: {fileID: 5894647608129653235}
         m_TargetAssemblyTypeName: TeamManager, Assembly-CSharp
         m_MethodName: AddPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2283842638897100609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132956506117718885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d923ca0399f2946a9dfeb692dc73b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 8d5a5ba4441cac74fb878a04a9860035, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5894647608129653235}
+        m_TargetAssemblyTypeName: TeamManager, Assembly-CSharp
+        m_MethodName: EnterCharacterSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

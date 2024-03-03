@@ -1,16 +1,14 @@
-using Photon.Pun;
 using ScriptableArchitecture.Data;
 using UnityEngine;
 
-public class LoadGame : MonoBehaviour
+public class EnterCharacterSelect : MonoBehaviour
 {
     [Header("Data")]
-    [SerializeField] private GameEvent _startGameEvent;
+    [SerializeField] private GameEvent _enterEvent;
     [SerializeField] private RoomDataReference _roomData;
-    [SerializeField] private StringReference _gameSceneName;
 
 
-    public void StartGame()
+    public void Enter()
     {
         if (_roomData.Value.PlayerCount == 0)
         {
@@ -18,6 +16,6 @@ public class LoadGame : MonoBehaviour
             return;
         }
 
-        _startGameEvent.Raise();
+        _enterEvent.Raise();
     }
 }

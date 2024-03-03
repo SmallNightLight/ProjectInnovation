@@ -18,13 +18,11 @@ MonoBehaviour:
   _value:
     PlayersPerTeam: 2
     MaxTeams: 4
-    _teams:
-    - Players:
-      - Player1
-    _playerCount: 1
+    _teams: []
+    _playerCount: 0
   _startValue:
     PlayersPerTeam: 2
-    MaxTeams: 4
+    MaxTeams: 2
     _teams: []
     _playerCount: 0
   _runtimeSet: []

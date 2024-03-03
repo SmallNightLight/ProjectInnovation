@@ -22,10 +22,14 @@ public class RoomManager : MonoBehaviourPunCallbacks, ISetupManager
     [SerializeField] private BoolReference _isMainGame;
 
     [Header("Components")]
-    [SerializeField] private TMP_InputField _roomNameInput;
-    [SerializeField] private TMP_InputField _playerNameInput;
+    [SerializeField] private TMP_InputField _createRoomNameInput;
 
+    [Space]
 
+    [SerializeField] private TMP_InputField _joinRoomNameInput;
+    [SerializeField] private TMP_InputField _joinPlayerNameInput;
+
+    
     public void Setup()
     {
         if (_createDefaultRoom.Value)
@@ -41,12 +45,12 @@ public class RoomManager : MonoBehaviourPunCallbacks, ISetupManager
 
     public void CreateRoom()
     {
-        PhotonNetwork.CreateRoom(_roomNameInput.text);
+        PhotonNetwork.CreateRoom(_createRoomNameInput.text);
     }
 
     public void JoinRoom()
     {
-        PhotonNetwork.JoinRoom(_roomNameInput.text);
+        PhotonNetwork.JoinRoom(_joinRoomNameInput.text);
     }
 
     public void LeaveRoom()
@@ -65,8 +69,8 @@ public class RoomManager : MonoBehaviourPunCallbacks, ISetupManager
         if (_isMainGame.Value)
             return "";
 
-        if (_playerNameInput.text != "")
-            return _playerNameInput.text;
+        if (_joinPlayerNameInput.text != "")
+            return _joinPlayerNameInput.text;
 
         return $"Player{_roomData.Value.PlayerCount + 1}";
     }

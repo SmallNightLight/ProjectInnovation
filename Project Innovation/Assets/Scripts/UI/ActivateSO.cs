@@ -1,23 +1,30 @@
 using ScriptableArchitecture.Data;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ActivateSO : MonoBehaviour
 {
-    [SerializeField] private BoolReference var;
-    [SerializeField] private bool activate;
+    [SerializeField] private GameObject _target;
+    [SerializeField] private bool _startState;
+
+    [Header("Condition for enabling")]
+    [SerializeField] private BoolReference _condition;
+    [SerializeField] private bool _desiredValue;
 
     void Start()
     {
-        Enable();
+        if (_startState)
+            EnableWithCondition();
+        else
+            Disable();
     }
 
-    public void Enable()
+    public void EnableWithCondition()
     {
-        if (var.Value)
-            gameObject.SetActive(activate);
-        else
-            gameObject.SetActive(!activate);
+        _target.SetActive(_condition.Value == _desiredValue);
+    }
+
+    public void Disable()
+    {
+        _target.SetActive(false);
     }
 }

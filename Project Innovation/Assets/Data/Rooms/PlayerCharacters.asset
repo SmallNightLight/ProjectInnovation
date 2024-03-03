@@ -9,14 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36f84f64c48d10f458900bd2816b7d0a, type: 3}
-  m_Name: IsMainGame
+  m_Script: {fileID: 11500000, guid: 5a10f6993e270684fb3aac740a83cc91, type: 3}
+  m_Name: PlayerCharacters
   m_EditorClassIdentifier: 
   VariableType: 0
-  InitializeTypeVariable: 2
+  InitializeTypeVariable: 0
   InitializeTypeRuntimeSet: 0
-  _value: 0
-  _startValue: 1
-  _runtimeSet: 
-  _startRuntimeSet: 
-  DebugValue: 0
+  _runtimeSet: []
+  _startRuntimeSet: []
