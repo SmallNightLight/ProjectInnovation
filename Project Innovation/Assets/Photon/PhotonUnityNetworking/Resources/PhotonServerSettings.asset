@@ -44,6 +44,8 @@ MonoBehaviour:
   - AddPlayer
   - UpdateRoomData
   - LoadNextGameScene
+  - SetPlayerCharacter
+  - SetPlayerPreview
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

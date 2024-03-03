@@ -76,4 +76,33 @@ public class TeamManager : MonoBehaviour, ISetupManager
     {
         PhotonNetwork.LoadLevel(_isMainGame.Value ? _mainSceneName.Value : _controlerSceneName.Value);
     }
+
+    //Character preview
+    public void PreviewCharacter(CharacterData characterData)
+    {
+        _photonView.RPC("SetPlayerPreview", RpcTarget.Others, _playerName.Value, characterData.Name);
+    }
+
+    [PunRPC]
+    public void SetPlayerPreview(string playerName, string characterName)
+    {
+        if (!_isMainGame.Value) return;
+
+
+    }
+
+
+    //Character selection
+    public void SelectCharacter()
+    {
+        _photonView.RPC("SetPlayerCharacter", RpcTarget.Others, _playerName.Value);
+    }
+
+    [PunRPC]
+    public void SetPlayerCharacter(string playerName)
+    {
+        if (!_isMainGame.Value) return;
+
+
+    }
 }
