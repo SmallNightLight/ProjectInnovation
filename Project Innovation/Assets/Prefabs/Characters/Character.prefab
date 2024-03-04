@@ -282,7 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentParts: []
   _infiniteAmmo: 0
-  _bulletPrefab: {fileID: 946379143936500698, guid: 6da955cb4f8c63f4fb1085372a681db9,
+  _bulletPrefab: {fileID: 6071708913489709977, guid: ba22ee4be98282e4fa4b721e3037a550,
     type: 3}
   _parentWeapon: {fileID: 8191382611689675293}
 --- !u!114 &4537153627206197002

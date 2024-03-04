@@ -9,6 +9,7 @@ namespace ScriptableArchitecture.Data
         [Header("Base")]
         public WeaponDataVariable MainWeapon;
         public WeaponPartType PartType;
+        public string ID;
 
         [Header("Percentages")]
         [Tooltip("% of the damage per individual bullet")] public float DamagePerBullet;
@@ -23,6 +24,7 @@ namespace ScriptableArchitecture.Data
 
         [Header("Prefabs")]
         public GameObject PartPrefab;
+        public Sprite Icon;
     }
 
     public enum WeaponPartType

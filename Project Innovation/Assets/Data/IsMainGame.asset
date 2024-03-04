@@ -16,7 +16,7 @@ MonoBehaviour:
   InitializeTypeVariable: 2
   InitializeTypeRuntimeSet: 0
   _value: 0
-  _startValue: 1
+  _startValue: 0
   _runtimeSet: 
   _startRuntimeSet: 
   DebugValue: 0
