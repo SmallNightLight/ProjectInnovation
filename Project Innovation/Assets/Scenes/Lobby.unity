@@ -1183,7 +1183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 679792436}
   - component: {fileID: 679792438}
-  - component: {fileID: 679792437}
+  - component: {fileID: 679792439}
   m_Layer: 5
   m_Name: TeamSelection
   m_TagString: Untagged
@@ -1211,34 +1211,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &679792437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679792435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d923ca0399f2946a9dfeb692dc73b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: 8d5a5ba4441cac74fb878a04a9860035, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1344872500}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &679792438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,6 +1251,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &679792439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679792435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb6ba977425f1c4885b6b34fead05b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1344872500}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _event: {fileID: 11400000, guid: f0db9a2f9c78d9d45850b4cae80d9ca0, type: 2}
 --- !u!1 &783630929
 GameObject:
   m_ObjectHideFlags: 0
@@ -4974,7 +4974,7 @@ GameObject:
   - component: {fileID: 1872846342}
   - component: {fileID: 1872846345}
   - component: {fileID: 1872846344}
-  - component: {fileID: 1872846343}
+  - component: {fileID: 1872846346}
   m_Layer: 5
   m_Name: CharacterSelection
   m_TagString: Untagged
@@ -5003,46 +5003,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -1920, y: -852}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1872846343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1872846341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d923ca0399f2946a9dfeb692dc73b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _event: {fileID: 11400000, guid: 8d5a5ba4441cac74fb878a04a9860035, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1872846345}
-        m_TargetAssemblyTypeName: ActivateSO, Assembly-CSharp
-        m_MethodName: EnableWithCondition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1872846344}
-        m_TargetAssemblyTypeName: ActivateSO, Assembly-CSharp
-        m_MethodName: EnableWithCondition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1872846344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5081,6 +5041,46 @@ MonoBehaviour:
     _variable: {fileID: 11400000, guid: 7ce1295df29463942909b9271f731e6c, type: 2}
     _constant: 0
   _desiredValue: 1
+--- !u!114 &1872846346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872846341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb6ba977425f1c4885b6b34fead05b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1872846345}
+        m_TargetAssemblyTypeName: ActivateSO, Assembly-CSharp
+        m_MethodName: EnableWithCondition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1872846344}
+        m_TargetAssemblyTypeName: ActivateSO, Assembly-CSharp
+        m_MethodName: EnableWithCondition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _event: {fileID: 11400000, guid: f0db9a2f9c78d9d45850b4cae80d9ca0, type: 2}
 --- !u!1 &1882923057
 GameObject:
   m_ObjectHideFlags: 0
@@ -5952,7 +5952,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e561d555786390f41bebc890f69f0b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enterEvent: {fileID: 11400000, guid: 8d5a5ba4441cac74fb878a04a9860035, type: 2}
+  _enterEvent:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: f0db9a2f9c78d9d45850b4cae80d9ca0, type: 2}
+    _constant: 0
   _roomData:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 073465d3b90fbca4aa85bd8cf7025f40, type: 2}
@@ -6702,6 +6705,11 @@ PrefabInstance:
     - target: {fileID: 5894647608129653235, guid: dcc9dacb497e00c46a62082dd316a628,
         type: 3}
       propertyPath: _playerCharacters._isVariable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894647608129653235, guid: dcc9dacb497e00c46a62082dd316a628,
+        type: 3}
+      propertyPath: _enterCharacterSelection._isVariable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8527226301394793644, guid: dcc9dacb497e00c46a62082dd316a628,

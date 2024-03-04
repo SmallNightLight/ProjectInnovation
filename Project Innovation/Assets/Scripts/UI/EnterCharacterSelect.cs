@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnterCharacterSelect : MonoBehaviour
 {
     [Header("Data")]
-    [SerializeField] private GameEvent _enterEvent;
+    [SerializeField] private BoolReference _enterEvent;
     [SerializeField] private RoomDataReference _roomData;
 
 
@@ -16,6 +16,6 @@ public class EnterCharacterSelect : MonoBehaviour
             return;
         }
 
-        _enterEvent.Raise();
+        _enterEvent.Raise(true);
     }
 }

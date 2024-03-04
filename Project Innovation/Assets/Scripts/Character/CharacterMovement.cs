@@ -10,6 +10,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float _maxSpeed = 50;
     [SerializeField] private float _rotationSpeed = 5;
 
+    private Quaternion _targetRotation;
+
     [Header("Components")]
     private Rigidbody _rigidbody;
     private CharacterBase _characterBase;
@@ -59,8 +61,9 @@ public class CharacterMovement : MonoBehaviour
 
         if (direction != Vector3.zero)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+            _targetRotation = Quaternion.LookRotation(direction, Vector3.up);
         }
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, _targetRotation, _rotationSpeed * Time.deltaTime);
     }
 }

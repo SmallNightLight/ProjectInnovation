@@ -17,7 +17,7 @@ public class TeamManager : MonoBehaviour, ISetupManager
     [SerializeField] private StringReference _controlerSceneName;
 
     [Header("Team selection")]
-    [SerializeField] private GameEvent _enterCharacterSelection;
+    [SerializeField] private BoolReference _enterCharacterSelection;
 
     [Header("Character selection")]
     [SerializeField] private PlayerCharactersReference _playerCharacters;
@@ -93,15 +93,17 @@ public class TeamManager : MonoBehaviour, ISetupManager
     }
 
     //Enter character selection
-    public void EnterCharacterSelect()
+    public void EnterCharacterSelect(bool isCalledFromThis)
     {
+        if (!isCalledFromThis) return;
+
         _photonView.RPC("EnterCharacterSelectRPC", RpcTarget.Others);
     }
 
     [PunRPC]
     public void EnterCharacterSelectRPC()
     {
-        _enterCharacterSelection.Raise();
+        _enterCharacterSelection.Raise(false);
     }
 
     //Character preview

@@ -14,10 +14,10 @@ namespace ScriptableArchitecture.Data
         [SerializeField] private List<TeamData> _teams = new();
         [SerializeField] private int _playerCount = 0;
 
-        public RoomData() 
+        public RoomData() //This needs to be changed for the actual value to be correct
         {
-            PlayersPerTeam = 2;
-            MaxTeams = 4;
+            PlayersPerTeam = 1;
+            MaxTeams = 2;
             _teams = new List<TeamData>();
             _playerCount = 0;
         }
