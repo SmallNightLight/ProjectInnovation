@@ -17,11 +17,11 @@ MonoBehaviour:
   InitializeTypeRuntimeSet: 0
   _value:
     PlayersPerTeam: 2
-    MaxTeams: 4
+    MaxTeams: 2
     _teams: []
     _playerCount: 0
   _startValue:
-    PlayersPerTeam: 2
+    PlayersPerTeam: 1
     MaxTeams: 2
     _teams: []
     _playerCount: 0
