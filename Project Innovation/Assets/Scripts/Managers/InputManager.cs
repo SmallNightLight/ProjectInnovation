@@ -20,6 +20,7 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
     [Header("Output")]
     [SerializeField] private List<WeaponPartDataReference> _parts = new List<WeaponPartDataReference>();
     [SerializeField] private WeaponPartDataReference _addPartEvent;
+    [SerializeField] private GameEvent _removePartsEvent;
 
     [Header("Components")]
     private PhotonView _photonView;
@@ -62,9 +63,12 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
     }
 
     //Send data to controller
-    public void AddPart(string playerName, string partID)
+    public void AddPart(String2 partPickupData)
     {
-        _photonView.RPC("GetInput", RpcTarget.Others, playerName, partID);
+        string playerName = partPickupData.Item1;
+        string partID = partPickupData.Item2;
+
+        _photonView.RPC("AddPartRPC", RpcTarget.Others, playerName, partID);
     }
 
     [PunRPC]
@@ -77,6 +81,19 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
         if (part == null) return;
 
         _addPartEvent.Raise(part);
+    }
+
+    public void RemoveParts(string playerName)
+    {
+        _photonView.RPC("RemovePartsRPC", RpcTarget.Others, playerName);
+    }
+
+    [PunRPC]
+    public void RemovePartsRPC(string playerName)
+    {
+        if (_playerName.Value != playerName) return;
+
+        _removePartsEvent.Raise();
     }
 
     private WeaponPartData GetPartData(string partID)

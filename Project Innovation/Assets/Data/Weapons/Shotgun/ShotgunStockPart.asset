@@ -18,6 +18,7 @@ MonoBehaviour:
   _value:
     MainWeapon: {fileID: 0}
     PartType: 0
+    ID: 
     DamagePerBullet: 0
     Spread: 0
     BulletsPerShot: 0
@@ -28,10 +29,11 @@ MonoBehaviour:
     Recoil: 0
     EnemyRecoil: 0
     PartPrefab: {fileID: 0}
-    ItemPrefab: {fileID: 0}
+    IconPrefab: {fileID: 0}
   _startValue:
     MainWeapon: {fileID: 11400000, guid: f19ad9a8e0f2913499f5345c18904d3c, type: 2}
     PartType: 2
+    ID: ShotgunStock
     DamagePerBullet: 25
     Spread: -20
     BulletsPerShot: 0
@@ -43,12 +45,14 @@ MonoBehaviour:
     EnemyRecoil: 0
     PartPrefab: {fileID: 1827029630604477961, guid: 1359a684ea1cab74ea77e62e2a8bc435,
       type: 3}
-    ItemPrefab: {fileID: 0}
+    IconPrefab: {fileID: 6302578597587301747, guid: 0a13319d84d5c6b4c9699996c54b9751,
+      type: 3}
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:
     MainWeapon: {fileID: 0}
     PartType: 0
+    ID: 
     DamagePerBullet: 0
     Spread: 0
     BulletsPerShot: 0
@@ -59,4 +63,4 @@ MonoBehaviour:
     Recoil: 0
     EnemyRecoil: 0
     PartPrefab: {fileID: 0}
-    ItemPrefab: {fileID: 0}
+    IconPrefab: {fileID: 0}

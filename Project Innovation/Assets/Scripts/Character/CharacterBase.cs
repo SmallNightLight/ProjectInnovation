@@ -5,6 +5,7 @@ public class CharacterBase : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField] private PlayersInputReference _playersInput;
+    private string _characterName;
 
     [Header("Settings")]
     [SerializeField] private InputType _useKeyboardInput;
@@ -25,6 +26,7 @@ public class CharacterBase : MonoBehaviour
 
     public void InitializeCharacter(string playerName, int team)
     {
+        _characterName = playerName;
         _playersInput.Value.TryGetPlayerInput(playerName, out _playerInput);
         _team = team;
     }
@@ -34,6 +36,14 @@ public class CharacterBase : MonoBehaviour
         get
         {
             return _team;
+        }
+    }
+
+    public string CharacterName
+    {
+        get
+        {
+            return _characterName;
         }
     }
 

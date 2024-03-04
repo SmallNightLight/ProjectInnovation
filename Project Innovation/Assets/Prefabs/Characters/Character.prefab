@@ -281,6 +281,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentParts: []
+  _pickupPartEvent:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 2a130cca229996a4cbb811a2a22c012d, type: 2}
+    _constant:
+      Item1: 
+      Item2: 
+  _destroyWeaponEvent:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 2e87188596cea2741830db2dada721a7, type: 2}
+    _constant: 
   _infiniteAmmo: 0
   _bulletPrefab: {fileID: 6071708913489709977, guid: ba22ee4be98282e4fa4b721e3037a550,
     type: 3}
@@ -300,7 +310,7 @@ MonoBehaviour:
   _startHealth:
     _isVariable: 0
     _variable: {fileID: 0}
-    _constant: 100
+    _constant: 50
 --- !u!54 &7416698341324226681
 Rigidbody:
   m_ObjectHideFlags: 0

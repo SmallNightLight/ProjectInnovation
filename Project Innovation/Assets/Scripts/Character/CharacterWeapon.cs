@@ -8,6 +8,8 @@ public class CharacterWeapon : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField] private List<WeaponPartDataReference> _currentParts = new List<WeaponPartDataReference>();
+    [SerializeField] private String2Reference _pickupPartEvent;
+    [SerializeField] private StringReference _destroyWeaponEvent;
 
     private WeaponData _currentWeaponData;
 
@@ -110,6 +112,7 @@ public class CharacterWeapon : MonoBehaviour
         _currentParts.Clear();
         CalculateWeapon();
         _shotCount = 0;
+        _destroyWeaponEvent.Raise(_characterBase.CharacterName);
     }
 
     public void UpdateWeaponVisuals()
@@ -211,7 +214,10 @@ public class CharacterWeapon : MonoBehaviour
             if (other.gameObject.TryGetComponent(out Item item))
             {
                 if (TryAddWeaponPart(item.WeaponPartData))
+                {
+                    _pickupPartEvent.Raise(new String2 { Item1 = _characterBase.CharacterName, Item2 = item.WeaponPartData.Value.ID});
                     Destroy(other.gameObject);
+                }
             }
         }
     }

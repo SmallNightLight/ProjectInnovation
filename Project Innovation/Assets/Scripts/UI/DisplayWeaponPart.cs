@@ -1,26 +1,47 @@
 using ScriptableArchitecture.Data;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DisplayWeaponPart : MonoBehaviour
 {
-    [SerializeField] private Image _barrelpart;
-    [SerializeField] private Image _basepart;
-    [SerializeField] private Image _stockpart;
+    [SerializeField] private Transform _barrelpart;
+    [SerializeField] private Transform _basepart;
+    [SerializeField] private Transform _stockpart;
 
     public void AddPart(WeaponPartData part)
     {
         switch (part.PartType)
         {
             case WeaponPartType.Barrel:
-                _barrelpart.sprite = part.Icon;
+                SetPart(_barrelpart, part.IconPrefab);
                 break;
             case WeaponPartType.Base:
-                _basepart.sprite = part.Icon;
+                SetPart(_basepart, part.IconPrefab);
                 break;
             case WeaponPartType.Stock:
-                _stockpart.sprite = part.Icon;
+                SetPart(_stockpart, part.IconPrefab);
                 break;
+        }
+    }
+
+    public void RemoveParts() 
+    {
+        RemoveChildren(_barrelpart);
+        RemoveChildren(_basepart);
+        RemoveChildren(_stockpart);
+    }
+
+    public void SetPart(Transform parent, GameObject iconPrefab)
+    {
+        RemoveChildren(parent);
+
+        Instantiate(iconPrefab, parent);
+    }
+
+    private void RemoveChildren(Transform parent)
+    {
+        foreach (Transform child in parent)
+        {
+            Destroy(child.gameObject);
         }
     }
 }

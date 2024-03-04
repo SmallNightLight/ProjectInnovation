@@ -18,6 +18,7 @@ MonoBehaviour:
   _value:
     MainWeapon: {fileID: 11400000, guid: cefcc42cbffcb444eb05f1f6544268c5, type: 2}
     PartType: 0
+    ID: 
     DamagePerBullet: 25
     Spread: -80
     BulletsPerShot: 0
@@ -29,10 +30,11 @@ MonoBehaviour:
     EnemyRecoil: 70
     PartPrefab: {fileID: 832793835084634208, guid: 6b750f6d5bc600f41931e8ece51b49b7,
       type: 3}
-    ItemPrefab: {fileID: 0}
+    IconPrefab: {fileID: 0}
   _startValue:
     MainWeapon: {fileID: 11400000, guid: cefcc42cbffcb444eb05f1f6544268c5, type: 2}
     PartType: 0
+    ID: RiffleBarrel
     DamagePerBullet: 25
     Spread: -80
     BulletsPerShot: 0
@@ -44,12 +46,14 @@ MonoBehaviour:
     EnemyRecoil: 70
     PartPrefab: {fileID: 832793835084634208, guid: 6b750f6d5bc600f41931e8ece51b49b7,
       type: 3}
-    ItemPrefab: {fileID: 0}
+    IconPrefab: {fileID: 5587848183512338846, guid: 214c459cf45f54a4bb6fb8c9e86d7998,
+      type: 3}
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:
     MainWeapon: {fileID: 0}
     PartType: 0
+    ID: 
     DamagePerBullet: 0
     Spread: 0
     BulletsPerShot: 0
@@ -60,4 +64,4 @@ MonoBehaviour:
     Recoil: 0
     EnemyRecoil: 0
     PartPrefab: {fileID: 0}
-    ItemPrefab: {fileID: 0}
+    IconPrefab: {fileID: 0}
