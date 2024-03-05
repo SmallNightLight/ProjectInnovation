@@ -291,7 +291,12 @@ MonoBehaviour:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 2e87188596cea2741830db2dada721a7, type: 2}
     _constant: 
+  _combineWeaponEvent:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: fe5110593d819d54ebed741a85323869, type: 2}
+    _constant: 
   _infiniteAmmo: 0
+  _shakeMargin: 0.5
   _bulletPrefab: {fileID: 6071708913489709977, guid: ba22ee4be98282e4fa4b721e3037a550,
     type: 3}
   _parentWeapon: {fileID: 8191382611689675293}

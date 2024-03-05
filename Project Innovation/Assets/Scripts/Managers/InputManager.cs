@@ -21,10 +21,13 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
     [SerializeField] private List<WeaponPartDataReference> _parts = new List<WeaponPartDataReference>();
     [SerializeField] private WeaponPartDataReference _addPartEvent;
     [SerializeField] private GameEvent _removePartsEvent;
+    [SerializeField] private GameEvent _combineWeaponEvent;
 
     [Header("Components")]
     private PhotonView _photonView;
 
+
+    private Vector3 _lastAcceleration;
 
     public void Setup()
     {
@@ -33,7 +36,17 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
 
     public void Update()
     {
-        SendInput();
+        if (!_isMainGame.Value)
+            SendInput();
+    }
+
+    private float GetShakeInput()
+    {
+        Vector3 acceleration = Input.acceleration;
+        float magnitude = Mathf.Abs((acceleration - _lastAcceleration).magnitude);
+        _lastAcceleration = acceleration;
+
+        return Input.acceleration.magnitude;//magnitude;
     }
 
     public void SendInput()
@@ -42,7 +55,7 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
 
         if (PhotonNetwork.IsConnected)
         {
-            _photonView.RPC("GetInput", RpcTarget.Others, _playerName.Value, _movementInput.Value, _directionInput.Value, _interactingInput.Value, _shootingInput.Value);
+            _photonView.RPC("GetInput", RpcTarget.Others, _playerName.Value, _movementInput.Value, _directionInput.Value, _interactingInput.Value, _shootingInput.Value, GetShakeInput());
         }
         else
         {
@@ -51,11 +64,11 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
     }
 
     [PunRPC]
-    public void GetInput(string playerName, Vector2 movementInput, Vector2 directionInput, bool interactingInput, bool shootingInput)
+    public void GetInput(string playerName, Vector2 movementInput, Vector2 directionInput, bool interactingInput, bool shootingInput, float shakeInput)
     {
         if (!_isMainGame.Value) return;
 
-        if (!_playersInput.Value.TrySetPlayerInput(playerName, movementInput, directionInput, interactingInput, shootingInput))
+        if (!_playersInput.Value.TrySetPlayerInput(playerName, movementInput, directionInput, interactingInput, shootingInput, shakeInput))
         {
             //Failed to find the player
             Debug.Log("Failed");
@@ -105,5 +118,17 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
         }
 
         return null;
+    }
+
+    public void CombineWeapon(string playerName)
+    {
+        _photonView.RPC("CombineWeaponRPC", RpcTarget.Others, playerName);
+    }
+
+    public void CombineWeaponRPC(string playerName)
+    {
+        if (_playerName.Value != playerName) return;
+
+        _combineWeaponEvent.Raise(); 
     }
 }

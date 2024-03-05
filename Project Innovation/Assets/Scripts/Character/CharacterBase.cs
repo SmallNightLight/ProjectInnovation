@@ -126,4 +126,20 @@ public class CharacterBase : MonoBehaviour
             }
         }
     }
+
+    public float ShakeInput
+    {
+        get
+        {
+            switch (_useKeyboardInput)
+            {
+                case InputType.Network:
+                    return _playerInput.ShakeInput;
+                case InputType.Keyboard:
+                    return Input.GetKeyDown(KeyCode.Space) ? 1f : 0f;
+                default:
+                    return 0;
+            }
+        }
+    }
 }

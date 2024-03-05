@@ -46,7 +46,8 @@ MonoBehaviour:
     EnemyRecoil: 30
     PartPrefab: {fileID: 6919341826384139201, guid: d59ab9977fa92e940a6457a97cc7ae26,
       type: 3}
-    IconPrefab: {fileID: 0}
+    IconPrefab: {fileID: 6591010526385013102, guid: 7dc6aa8e508788f48ab2ac770b6d9bba,
+      type: 3}
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:

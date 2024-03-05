@@ -31,7 +31,7 @@ namespace ScriptableArchitecture.Data
             return false;
         }
 
-        public bool TrySetPlayerInput(string playerName, Vector2 movementInput, Vector2 directionInput, bool interactingInput, bool shootingInput)
+        public bool TrySetPlayerInput(string playerName, Vector2 movementInput, Vector2 directionInput, bool interactingInput, bool shootingInput, float shakeInput)
         {
             if (HasPlayer(playerName))
             {
@@ -39,6 +39,7 @@ namespace ScriptableArchitecture.Data
                 _data[playerName].DirectionInput = directionInput;
                 _data[playerName].InteractingInput = interactingInput;
                 _data[playerName].ShootingInput = shootingInput;
+                _data[playerName].ShakeInput = shakeInput;
 
                 return true;
             }
@@ -56,5 +57,6 @@ namespace ScriptableArchitecture.Data
         public Vector2 DirectionInput;
         public bool InteractingInput;
         public bool ShootingInput;
+        public float ShakeInput;
     }
 }

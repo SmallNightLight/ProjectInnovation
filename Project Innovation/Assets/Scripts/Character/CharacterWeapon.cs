@@ -10,13 +10,16 @@ public class CharacterWeapon : MonoBehaviour
     [SerializeField] private List<WeaponPartDataReference> _currentParts = new List<WeaponPartDataReference>();
     [SerializeField] private String2Reference _pickupPartEvent;
     [SerializeField] private StringReference _destroyWeaponEvent;
+    [SerializeField] private StringReference _combineWeaponEvent;
 
     private WeaponData _currentWeaponData;
 
     [Header("Settings")]
     [SerializeField] private bool _infiniteAmmo;
+    [SerializeField] private float _shakeMargin = 0.5f;
     private float _shootTimer;
     private int _shotCount;
+    private bool _isCombined;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject _bulletPrefab;
@@ -53,6 +56,14 @@ public class CharacterWeapon : MonoBehaviour
         {
             _shootTimer = _currentWeaponData.FireRate;
             Shoot();
+        }
+
+        //Debug.Log(_characterBase.ShakeInput);
+        if (!_isCombined && CanCombine())
+        {
+            _combineWeaponEvent.Raise(_characterBase.CharacterName);
+            UpdateWeaponVisuals();
+            _isCombined = true;
         }
     }
 
@@ -112,6 +123,7 @@ public class CharacterWeapon : MonoBehaviour
         _currentParts.Clear();
         CalculateWeapon();
         _shotCount = 0;
+        _isCombined = false;
         _destroyWeaponEvent.Raise(_characterBase.CharacterName);
     }
 
@@ -122,6 +134,12 @@ public class CharacterWeapon : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+        if (_isCombined)
+            AddWeaponObjects();
+    }
+
+    private void AddWeaponObjects()
+    {
         _bulletExitPoint = null;
 
         List<(WeaponPartType, GameObject)> newParts = new List<(WeaponPartType, GameObject)>();
@@ -135,7 +153,7 @@ public class CharacterWeapon : MonoBehaviour
                 _bulletExitPoint = partObject.GetComponentInChildren<BulletExitPoint>();
         }
 
-        foreach(var part in newParts)
+        foreach (var part in newParts)
         {
             if (part.Item1 == WeaponPartType.Base)
                 _bulletExitPoint = part.Item2.GetComponentInChildren<BulletExitPoint>();
@@ -232,5 +250,11 @@ public class CharacterWeapon : MonoBehaviour
         }
 
         return false;
+    }
+
+    private bool CanCombine()
+    {
+        Debug.Log(_characterBase.ShakeInput);
+       return _currentParts.Count == 3 && _characterBase.ShakeInput > _shakeMargin;
     }
 }

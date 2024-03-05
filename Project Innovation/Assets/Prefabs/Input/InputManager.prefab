@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1011509302223543043}
   - component: {fileID: 7029366358248380531}
   - component: {fileID: 4659996535648585276}
+  - component: {fileID: 8386363341568698142}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -247,6 +248,8 @@ MonoBehaviour:
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
   _removePartsEvent: {fileID: 11400000, guid: 2545283ab728c2941bddb3def914ab78, type: 2}
+  _combineWeaponEvent: {fileID: 11400000, guid: 692ff84e48517344a8ef42d7ae2f7acf,
+    type: 2}
 --- !u!114 &1011509302223543043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,3 +328,31 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _event: {fileID: 11400000, guid: 2e87188596cea2741830db2dada721a7, type: 2}
+--- !u!114 &8386363341568698142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4385584138493054418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef5f6a3754f7d84cb4a334590295269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5379131900541951661}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: CombineWeapon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _event: {fileID: 11400000, guid: fe5110593d819d54ebed741a85323869, type: 2}
