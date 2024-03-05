@@ -58,12 +58,11 @@ public class CharacterWeapon : MonoBehaviour
             Shoot();
         }
 
-        //Debug.Log(_characterBase.ShakeInput);
         if (!_isCombined && CanCombine())
         {
             _combineWeaponEvent.Raise(_characterBase.CharacterName);
-            UpdateWeaponVisuals();
             _isCombined = true;
+            UpdateWeaponVisuals();
         }
     }
 
@@ -242,7 +241,7 @@ public class CharacterWeapon : MonoBehaviour
 
     private bool TryAddWeaponPart(WeaponPartDataReference part)
     {
-        if (!HasWeaponType(part.Value.PartType))
+        if (!_isCombined && !HasWeaponType(part.Value.PartType))
         {
             _currentParts.Add(part);
             CalculateWeapon();
@@ -254,7 +253,6 @@ public class CharacterWeapon : MonoBehaviour
 
     private bool CanCombine()
     {
-        Debug.Log(_characterBase.ShakeInput);
-       return _currentParts.Count == 3 && _characterBase.ShakeInput > _shakeMargin;
+        return _currentParts.Count != 0 && HasWeaponType(WeaponPartType.Base) && _characterBase.ShakeInput > _shakeMargin;
     }
 }

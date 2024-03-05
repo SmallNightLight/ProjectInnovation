@@ -296,7 +296,7 @@ MonoBehaviour:
     _variable: {fileID: 11400000, guid: fe5110593d819d54ebed741a85323869, type: 2}
     _constant: 
   _infiniteAmmo: 0
-  _shakeMargin: 0.5
+  _shakeMargin: 1.5
   _bulletPrefab: {fileID: 6071708913489709977, guid: ba22ee4be98282e4fa4b721e3037a550,
     type: 3}
   _parentWeapon: {fileID: 8191382611689675293}

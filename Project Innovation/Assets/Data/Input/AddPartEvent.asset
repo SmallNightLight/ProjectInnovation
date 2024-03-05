@@ -29,7 +29,8 @@ MonoBehaviour:
     Recoil: 0
     EnemyRecoil: 0
     PartPrefab: {fileID: 0}
-    IconPrefab: {fileID: 0}
+    IconPrefab: {fileID: 6302578597587301747, guid: 0a13319d84d5c6b4c9699996c54b9751,
+      type: 3}
   _startValue:
     MainWeapon: {fileID: 0}
     PartType: 0
@@ -61,4 +62,5 @@ MonoBehaviour:
     Recoil: 0
     EnemyRecoil: 0
     PartPrefab: {fileID: 0}
-    IconPrefab: {fileID: 0}
+    IconPrefab: {fileID: 6302578597587301747, guid: 0a13319d84d5c6b4c9699996c54b9751,
+      type: 3}

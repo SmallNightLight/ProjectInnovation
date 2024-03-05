@@ -27,8 +27,6 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
     private PhotonView _photonView;
 
 
-    private Vector3 _lastAcceleration;
-
     public void Setup()
     {
         _photonView = GetComponent<PhotonView>();
@@ -42,11 +40,7 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
 
     private float GetShakeInput()
     {
-        Vector3 acceleration = Input.acceleration;
-        float magnitude = Mathf.Abs((acceleration - _lastAcceleration).magnitude);
-        _lastAcceleration = acceleration;
-
-        return Input.acceleration.magnitude;//magnitude;
+        return Input.GetKeyDown(KeyCode.P) ? 2f : Input.acceleration.magnitude;
     }
 
     public void SendInput()
@@ -125,6 +119,7 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
         _photonView.RPC("CombineWeaponRPC", RpcTarget.Others, playerName);
     }
 
+    [PunRPC]
     public void CombineWeaponRPC(string playerName)
     {
         if (_playerName.Value != playerName) return;

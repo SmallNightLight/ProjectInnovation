@@ -49,6 +49,7 @@ MonoBehaviour:
   - EnterCharacterSelectRPC
   - AddPartRPC
   - RemovePartsRPC
+  - CombineWeaponRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

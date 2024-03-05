@@ -22,20 +22,23 @@ public class DisplayWeaponPart : MonoBehaviour
                 SetPart(_stockpart, part.IconPrefab);
                 break;
         }
+
+        SetAllState(false);
     }
 
-    public void RemoveParts() 
+    [ContextMenu("RemoveParts")]
+    public void RemoveParts()
     {
         RemoveChildren(_barrelpart);
         RemoveChildren(_basepart);
         RemoveChildren(_stockpart);
+        SetAllState(false);
     }
 
     public void SetPart(Transform parent, GameObject iconPrefab)
     {
         RemoveChildren(parent);
         Instantiate(iconPrefab, parent);
-        SetPartsState(parent.gameObject);
     }
 
     private void RemoveChildren(Transform parent)
@@ -48,24 +51,21 @@ public class DisplayWeaponPart : MonoBehaviour
 
     public void CombineWeapon()
     {
-        SetCombinedState(_barrelpart.gameObject);
-        SetCombinedState(_basepart.gameObject);
-        SetCombinedState(_stockpart.gameObject);
+        SetAllState(true);
     }
 
-    private void SetCombinedState(GameObject target)
+    public void SetAllState(bool combined)
+    {
+        SetState(_barrelpart.gameObject, !combined);
+        SetState(_basepart.gameObject, !combined);
+        SetState(_stockpart.gameObject, !combined);
+    }
+
+    private void SetState(GameObject target, bool state)
     {
         if (target.TryGetComponent(out Image image))
         {
-            image.enabled = false;
-        }
-    }
-
-    private void SetPartsState(GameObject target)
-    {
-        if (target.TryGetComponent(out Image image))
-        {
-            image.enabled = true;
+            image.enabled = state;
         }
     }
 }

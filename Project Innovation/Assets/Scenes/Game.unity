@@ -2955,6 +2955,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 2150431511745879350, guid: cf5bf973193051645b392baa9ef997a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2622674270025212826, guid: cf5bf973193051645b392baa9ef997a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3008,12 +3013,12 @@ PrefabInstance:
     - target: {fileID: 2689304222117345184, guid: cf5bf973193051645b392baa9ef997a9,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2689304222117345184, guid: cf5bf973193051645b392baa9ef997a9,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2689304222117345184, guid: cf5bf973193051645b392baa9ef997a9,
         type: 3}
