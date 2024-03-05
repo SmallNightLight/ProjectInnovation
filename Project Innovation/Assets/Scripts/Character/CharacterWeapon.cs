@@ -19,6 +19,7 @@ public class CharacterWeapon : MonoBehaviour
     [SerializeField] private float _shakeMargin = 0.5f;
     private float _shootTimer;
     private int _shotCount;
+    private List<Item> _pickupList = new List<Item>();
     private bool _isCombined;
 
     [Header("Prefabs")]
@@ -40,7 +41,27 @@ public class CharacterWeapon : MonoBehaviour
 
     private void Update()
     {
+        CheckPickup();
         UpdateShooting();
+    }
+
+    private void CheckPickup()
+    {
+        if (_pickupList == null || _pickupList.Count == 0) return;
+
+        if (!_characterBase.InteractingInput) return;
+
+        for (int i = _pickupList.Count - 1; i >= 0; i--)
+        {
+            Item item = _pickupList[i];
+
+            if (TryAddWeaponPart(item.WeaponPartData))
+            {
+                _pickupPartEvent.Raise(new String2 { Item1 = _characterBase.CharacterName, Item2 = item.WeaponPartData.Value.ID });
+                _pickupList.RemoveAt(i);
+                Destroy(item.gameObject);
+            }
+        }
     }
 
     private void UpdateShooting()
@@ -226,22 +247,23 @@ public class CharacterWeapon : MonoBehaviour
     //Weapon part pickup
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Item")
-        {
-            if (other.gameObject.TryGetComponent(out Item item))
-            {
-                if (TryAddWeaponPart(item.WeaponPartData))
-                {
-                    _pickupPartEvent.Raise(new String2 { Item1 = _characterBase.CharacterName, Item2 = item.WeaponPartData.Value.ID});
-                    Destroy(other.gameObject);
-                }
-            }
-        }
+        if (other.gameObject.tag != "Item") return;
+
+        if (other.gameObject.TryGetComponent(out Item item))
+            _pickupList.Add(item);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag != "Item") return;
+
+        if (other.gameObject.TryGetComponent(out Item item))
+            _pickupList.Remove(item);
     }
 
     private bool TryAddWeaponPart(WeaponPartDataReference part)
     {
-        if (!_isCombined && !HasWeaponType(part.Value.PartType))
+        if (CanPickupItem(part))
         {
             _currentParts.Add(part);
             CalculateWeapon();
@@ -250,6 +272,8 @@ public class CharacterWeapon : MonoBehaviour
 
         return false;
     }
+
+    private bool CanPickupItem(WeaponPartDataReference part) => !_isCombined && !HasWeaponType(part.Value.PartType);
 
     private bool CanCombine()
     {

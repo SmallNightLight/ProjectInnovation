@@ -135,6 +135,7 @@ MonoBehaviour:
     _constant:
       MainWeapon: {fileID: 0}
       PartType: 0
+      ID: 
       DamagePerBullet: 0
       Spread: 0
       BulletsPerShot: 0
@@ -145,6 +146,8 @@ MonoBehaviour:
       Recoil: 0
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
+      IconPrefab: {fileID: 0}
+  _hoverEmmissionColor: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
 --- !u!135 &2873477366337805521
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -164,5 +167,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 200
+  m_Radius: 250
   m_Center: {x: 0, y: 0, z: 0}
