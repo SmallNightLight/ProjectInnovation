@@ -32,8 +32,8 @@ MonoBehaviour:
     BulletsPerShot: 25
     ShotCount: 4
     FireRate: 1
-    BulletSpeed: 30
-    Range: 7
+    BulletSpeed: 15
+    Range: 10
     Recoil: 3
     EnemyRecoil: 3
     Bonus: {fileID: 11400000, guid: 50ae4d0d46360014fa0befaf05b8e74a, type: 2}

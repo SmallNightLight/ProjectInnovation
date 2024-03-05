@@ -33,7 +33,7 @@ MonoBehaviour:
     ShotCount: 7
     FireRate: 0.7
     BulletSpeed: 50
-    Range: 20
+    Range: 40
     Recoil: 2
     EnemyRecoil: 4
     Bonus: {fileID: 11400000, guid: 50ae4d0d46360014fa0befaf05b8e74a, type: 2}
