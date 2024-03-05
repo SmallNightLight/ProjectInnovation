@@ -10,6 +10,7 @@ public class CharacterBase : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private InputType _useKeyboardInput;
     [SerializeField] private int _team;
+    [SerializeField] private Vector3 _spawnPosition;
 
     [Header("Components")]
     [SerializeField] private Camera _camera;
@@ -24,11 +25,12 @@ public class CharacterBase : MonoBehaviour
         None
     }
 
-    public void InitializeCharacter(string playerName, int team)
+    public void InitializeCharacter(string playerName, int team, Vector3 spawnPosition)
     {
         _characterName = playerName;
         _playersInput.Value.TryGetPlayerInput(playerName, out _playerInput);
         _team = team;
+        _spawnPosition = spawnPosition;
     }
 
     public int Team
@@ -140,6 +142,14 @@ public class CharacterBase : MonoBehaviour
                 default:
                     return 0;
             }
+        }
+    }
+
+    public Vector3 SpawnPosition
+    {
+        get
+        {
+            return _spawnPosition;
         }
     }
 }

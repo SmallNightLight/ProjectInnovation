@@ -34,10 +34,17 @@ public class CharacterHealth : MonoBehaviour
             Death();
     }
 
+    [ContextMenu("DIE")]
     public void Death()
     {
         _health = 0;
-        Debug.Log("Player died");
+        Respawn();
+    }
+
+    public void Respawn()
+    {
+        _health = _startHealth.Value;
+        transform.position = _characterBase.SpawnPosition;
     }
 
     private void UpdateHealthUI()

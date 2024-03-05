@@ -9,7 +9,13 @@ public class SpawnManager : MonoBehaviour, ISetupManager
     [SerializeField] private PlayersInputReference _playersInput;
 
     [Header("Settings")]
-    [SerializeField] private List<Vector3> _teamSpawnPositions;
+    [SerializeField] private List<TeamSpawns> _teamSpawnPositions;
+
+    [System.Serializable]
+    private class TeamSpawns
+    {
+        public List<Vector3> PlayerSpawns;
+    }
 
     [Header("Prefabs")]
     [SerializeField] private GameObject _characterPrefab;
@@ -27,12 +33,12 @@ public class SpawnManager : MonoBehaviour, ISetupManager
         {
             for (int player = 0; player < teams[team].Players.Count; player++)
             {
-                SpawnPlayer(teams[team].Players[player], team);
+                SpawnPlayer(teams[team].Players[player], team, player);
             }
         }
     }
 
-    public void SpawnPlayer(string playerName, int team)
+    public void SpawnPlayer(string playerName, int team, int playerIndex)
     {
         if (_teamSpawnPositions == null || team >= _teamSpawnPositions.Count)
         {
@@ -41,7 +47,9 @@ public class SpawnManager : MonoBehaviour, ISetupManager
         }
 
         _playersInput.Value.AddNewPlayer(playerName);
-        CharacterBase character = Instantiate(_characterPrefab, _teamSpawnPositions[team], Quaternion.identity).GetComponent<CharacterBase>();
-        character.InitializeCharacter(playerName, team);
+
+        Vector3 spawnPosition = _teamSpawnPositions[team].PlayerSpawns[playerIndex];
+        CharacterBase character = Instantiate(_characterPrefab, spawnPosition, Quaternion.identity).GetComponent<CharacterBase>();
+        character.InitializeCharacter(playerName, team, spawnPosition);
     }
 }
