@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da82e0f9fd8f63e42a429965ccdbd1dc, type: 3}
-  m_Name: C1
+  m_Name: WoodcutterGuy
   m_EditorClassIdentifier: 
   VariableType: 0
   InitializeTypeVariable: 2
   InitializeTypeRuntimeSet: 2
   _value:
-    Name: C1
+    Name: C2
     Description: 
-    Icon: {fileID: 21300000, guid: 3a74f678ee8f3bd49aacf3de1ae4bcaa, type: 3}
+    Icon: {fileID: 21300000, guid: 7377013011b4c3348809ff574abe799e, type: 3}
     PreviewObject: {fileID: 0}
     GameCharacter: {fileID: 0}
   _startValue:
-    Name: C1
+    Name: WoodcutterGuy
     Description: 
-    Icon: {fileID: 21300000, guid: 3a74f678ee8f3bd49aacf3de1ae4bcaa, type: 3}
+    Icon: {fileID: 21300000, guid: f58bf3b406ee3de4b93811bcd68c782e, type: 3}
     PreviewObject: {fileID: 0}
     GameCharacter: {fileID: 0}
   _runtimeSet: []
