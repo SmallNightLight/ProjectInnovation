@@ -31,6 +31,7 @@ public class SpawnManager : MonoBehaviour, ISetupManager
 
         for (int team = 0; team < teams.Count; team++)
         {
+            teams[team].ResetDeathCounter();
             for (int player = 0; player < teams[team].Players.Count; player++)
             {
                 SpawnPlayer(teams[team].Players[player], team, player);

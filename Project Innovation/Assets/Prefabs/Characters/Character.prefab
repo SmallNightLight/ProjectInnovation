@@ -251,6 +251,7 @@ MonoBehaviour:
     _variable: {fileID: 11400000, guid: 3e1198c9f5cfa0c4bb96723eb9aaa870, type: 2}
   _useKeyboardInput: 0
   _team: 0
+  _spawnPosition: {x: 0, y: 0, z: 0}
   _camera: {fileID: 0}
 --- !u!114 &1204767217530004696
 MonoBehaviour:
@@ -316,6 +317,14 @@ MonoBehaviour:
     _isVariable: 0
     _variable: {fileID: 0}
     _constant: 50
+  _roomData:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 073465d3b90fbca4aa85bd8cf7025f40, type: 2}
+    _constant:
+      PlayersPerTeam: 1
+      MaxTeams: 2
+      _teams: []
+      _playerCount: 0
 --- !u!54 &7416698341324226681
 Rigidbody:
   m_ObjectHideFlags: 0

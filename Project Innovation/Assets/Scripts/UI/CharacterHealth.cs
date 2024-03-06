@@ -7,6 +7,7 @@ public class CharacterHealth : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField] private FloatReference _startHealth;
+    [SerializeField] private RoomDataReference _roomData;
     private float _health;
 
     [Header("Components")]
@@ -37,6 +38,7 @@ public class CharacterHealth : MonoBehaviour
     [ContextMenu("DIE")]
     public void Death()
     {
+        _roomData.Value.GetTeamData(_characterBase.Team).AddDeathPoint();
         _health = 0;
         Respawn();
     }

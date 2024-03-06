@@ -9,11 +9,11 @@ namespace ScriptableArchitecture.Data
     public class TeamData : IDataPoint, IPunObservable
     {
         public List<string> Players = new();
-        public int Points;
+        public int DeathCount;
 
-        public void ResetPoints() => Points = 0;
+        public void ResetDeathCounter() => DeathCount = 0;
 
-        public void AddPoint() => Points++;
+        public void AddDeathPoint() => DeathCount++;
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
