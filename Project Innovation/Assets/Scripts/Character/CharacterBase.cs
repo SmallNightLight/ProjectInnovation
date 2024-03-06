@@ -138,7 +138,7 @@ public class CharacterBase : MonoBehaviour
                 case InputType.Network:
                     return _playerInput.ShakeInput;
                 case InputType.Keyboard:
-                    return Input.GetKeyDown(KeyCode.Space) ? 1f : 0f;
+                    return Input.GetMouseButton(2) ? 2f : 0f;
                 default:
                     return 0;
             }

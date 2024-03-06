@@ -5471,6 +5471,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 539805517502252406, guid: 29006aac36bac704cbdadc15ea49533e,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721133625465731724, guid: 29006aac36bac704cbdadc15ea49533e,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1241816199681970163, guid: 29006aac36bac704cbdadc15ea49533e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5521,10 +5531,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2716820795551865563, guid: 29006aac36bac704cbdadc15ea49533e,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7343635112168192933, guid: 29006aac36bac704cbdadc15ea49533e,
         type: 3}
       propertyPath: m_Name
       value: Scenery
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157967360179714015, guid: 29006aac36bac704cbdadc15ea49533e,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
