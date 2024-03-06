@@ -25,7 +25,8 @@ MonoBehaviour:
     Name: Kroko
     Description: 
     Icon: {fileID: 21300000, guid: 0b85fe78e33257d44b3b28102cd4e7d3, type: 3}
-    PreviewObject: {fileID: 0}
+    PreviewObject: {fileID: 4825352332892189931, guid: 4655dbc2c0a705e44b40c9cde4d4d186,
+      type: 3}
     GameCharacter: {fileID: 0}
   _runtimeSet: []
   _startRuntimeSet: []
