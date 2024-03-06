@@ -131,9 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8299eab6c112b4b92fecfe3dce4863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Light: {fileID: 6698371045225680214}
-  MinTime: 0.1
-  MaxTime: 2
-  Timer: 0
-  AS: {fileID: 0}
-  LightAudio: {fileID: 0}
+  _enabledTime: {x: 0.1, y: 0.2}
+  _disabledTime: {x: 0.1, y: 5}
+  _light: {fileID: 6698371045225680214}

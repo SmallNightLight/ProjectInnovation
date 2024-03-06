@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 6646773555855916990, guid: 84f21c6aca470944595bc225425bf50c,
         type: 3}
       propertyPath: m_Name
-      value: Green Light (3) Variant
+      value: Red Light
       objectReference: {fileID: 0}
     - target: {fileID: 6698371045225680214, guid: 84f21c6aca470944595bc225425bf50c,
         type: 3}
