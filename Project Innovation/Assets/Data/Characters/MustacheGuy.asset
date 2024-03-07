@@ -21,6 +21,7 @@ MonoBehaviour:
     Icon: {fileID: 21300000, guid: 3a74f678ee8f3bd49aacf3de1ae4bcaa, type: 3}
     PreviewObject: {fileID: 0}
     GameCharacter: {fileID: 0}
+    HealthIcon: {fileID: 0}
   _startValue:
     Name: MustacheGuy
     Description: 
@@ -29,6 +30,7 @@ MonoBehaviour:
       type: 3}
     GameCharacter: {fileID: 6731040223252245097, guid: a712a17dc4c8b2544b445c4e9032de92,
       type: 3}
+    HealthIcon: {fileID: 21300000, guid: 01fdcdbf4c3905f4c9e2e1bf61b1915a, type: 3}
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:
@@ -37,3 +39,4 @@ MonoBehaviour:
     Icon: {fileID: 0}
     PreviewObject: {fileID: 0}
     GameCharacter: {fileID: 0}
+    HealthIcon: {fileID: 0}

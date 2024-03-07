@@ -10,7 +10,13 @@ public class CharacterHealth : MonoBehaviour
     [SerializeField] private RoomDataReference _roomData;
     private float _health;
 
+    [Header("Settings")]
+    [SerializeField] private Color _colorTeam1;
+    [SerializeField] private Color _colorTeam2;
+
     [Header("Components")]
+    [SerializeField] private Image _iconImage;
+    [SerializeField] private Image _fillImage;
     private CharacterBase _characterBase;
     private Slider _healthSlider;
 
@@ -20,6 +26,17 @@ public class CharacterHealth : MonoBehaviour
         _healthSlider = GetComponentInChildren<Slider>();
 
         _health = _startHealth.Value;
+    }
+
+    public void Initialize(int team, CharacterData characterData)
+    {
+        if (team == 0)
+            _fillImage.color = _colorTeam1;
+        else
+            _fillImage.color = _colorTeam2;
+
+        _iconImage.sprite = characterData.HealthIcon;
+
     }
 
     private void Update()

@@ -14,5 +14,6 @@ namespace ScriptableArchitecture.Data
         [Header("Prefabs")]
         public GameObject PreviewObject;
         public GameObject GameCharacter;
+        public Sprite HealthIcon;
     }
 }

@@ -46,6 +46,12 @@ public class CharacterBase : MonoBehaviour
 
         //Add character model
         Instantiate(_characterData.GameCharacter, transform);
+
+        //Initilaize health bar
+        if (TryGetComponent(out CharacterHealth characterHealth))
+        {
+            characterHealth.Initialize(team, _characterData);
+        }
     }
 
     public int Team
