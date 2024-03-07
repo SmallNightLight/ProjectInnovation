@@ -275,8 +275,7 @@ public class CharacterWeapon : MonoBehaviour
 
     private bool CanPickupItem(WeaponPartDataReference part) => !_isCombined && !HasWeaponType(part.Value.PartType);
 
-    private bool CanCombine()
-    {
-        return _currentParts.Count != 0 && HasWeaponType(WeaponPartType.Base) && _characterBase.ShakeInput > _shakeMargin;
-    }
+    private bool CanCombine() => _currentParts.Count != 0 && HasWeaponType(WeaponPartType.Base) && _characterBase.ShakeInput > _shakeMargin;
+
+    public bool IsCarryingWeapon() => _isCombined;
 }

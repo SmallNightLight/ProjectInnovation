@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 796ee67244a64f745be6f2428a25bd7d
+guid: 14b4a4301a715f6409ee7d147d08ef19
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,7 +33,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: PiggyGunBackward
+      name: PiggyGunRight
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0

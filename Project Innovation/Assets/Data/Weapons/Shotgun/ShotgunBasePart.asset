@@ -42,7 +42,7 @@ MonoBehaviour:
     FireRate: 100
     BulletSpeed: 70
     Range: 50
-    Recoil: 250
+    Recoil: 50
     EnemyRecoil: 30
     PartPrefab: {fileID: 3421277828176001310, guid: 4637c4e43aa7c7744b0d1fbba51395d5,
       type: 3}

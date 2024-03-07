@@ -41,7 +41,7 @@ MonoBehaviour:
     FireRate: 0
     BulletSpeed: 15
     Range: 50
-    Recoil: -150
+    Recoil: 50
     EnemyRecoil: 0
     PartPrefab: {fileID: 1827029630604477961, guid: 1359a684ea1cab74ea77e62e2a8bc435,
       type: 3}
