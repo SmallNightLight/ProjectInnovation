@@ -21,7 +21,8 @@ public class TeamManager : MonoBehaviour, ISetupManager
 
     [Header("Character selection")]
     [SerializeField] private PlayerCharactersReference _playerCharacters;
-    [SerializeField] private PlayerCharactersReference _previewCharacters;
+
+    [SerializeField] private CharacterDataReference _selectedCharacterData;
     [SerializeField] private GameEvent _previewChangeEvent;
 
     [Header("Components")]
@@ -31,12 +32,7 @@ public class TeamManager : MonoBehaviour, ISetupManager
     public void Setup()
     {
         _photonView = GetComponent<PhotonView>();
-
-        if (_isMainGame.Value)
-        {
-            _previewCharacters.Value.Clear();
-            _playerCharacters.Value.Clear();
-        }
+        _playerCharacters.Value.Clear();
     }
 
     public void AddPlayer()
@@ -109,15 +105,16 @@ public class TeamManager : MonoBehaviour, ISetupManager
     //Character preview
     public void PreviewCharacter(CharacterData characterData)
     {
-        _photonView.RPC("SetPlayerPreview", RpcTarget.Others, _playerName.Value, characterData.Name);
+        _photonView.RPC("SetPlayerPreview", RpcTarget.All, _playerName.Value, characterData.Name);
     }
 
     [PunRPC]
     public void SetPlayerPreview(string playerName, string characterName)
     {
+        _playerCharacters.Value.SetCharacter(playerName, characterName);
+
         if (!_isMainGame.Value) return;
 
-        _previewCharacters.Value.SetCharacter(playerName, characterName);
         _previewChangeEvent.Raise();
     }
 
@@ -125,15 +122,17 @@ public class TeamManager : MonoBehaviour, ISetupManager
     //Character selection
     public void SelectCharacter()
     {
-        _photonView.RPC("SetPlayerCharacter", RpcTarget.Others, _playerName.Value);
+        if (_selectedCharacterData.Value.Name == "") return;
+
+        _photonView.RPC("SetPlayerCharacter", RpcTarget.All, _playerName.Value);
     }
 
     [PunRPC]
     public void SetPlayerCharacter(string playerName)
     {
-        if (!_isMainGame.Value) return;
+        _playerCharacters.Value.SetReady(playerName);
 
-        _playerCharacters.Value.SetCharacter(playerName, _previewCharacters.Value.GetCharacter(playerName));
+        if (!_isMainGame.Value) return;
 
         if (AllCharactersSelected())
             StartGame();

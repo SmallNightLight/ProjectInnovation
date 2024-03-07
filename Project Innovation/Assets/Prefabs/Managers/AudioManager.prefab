@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 884478316096504025}
   - component: {fileID: 7534707626157232114}
+  - component: {fileID: 8548816618702358030}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -46,3 +47,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundMode: 0
   _mainMixer: {fileID: 24100000, guid: b43c7fce8d9845a44bbd028883905885, type: 2}
+--- !u!114 &8548816618702358030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6855237212049019416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1e862ded09e6d4c82401e1ef6e0988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7534707626157232114}
+        m_TargetAssemblyTypeName: ScriptableArchitecture.Data.AudioManager, ScriptableAssembly.Data
+        m_MethodName: PlaySoundEffect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _event: {fileID: 11400000, guid: e4a7ef4a2433b924d83525305bc93702, type: 2}

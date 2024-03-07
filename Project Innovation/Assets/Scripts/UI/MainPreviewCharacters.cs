@@ -10,7 +10,6 @@ public class MainPreviewCharacters : MonoBehaviour
 
     [SerializeField] private RoomDataReference _roomData;
     [SerializeField] private PlayerCharactersReference _playerCharacters;
-    [SerializeField] private PlayerCharactersReference _previewCharacters;
 
     private Dictionary<string, GameObject> _references;
 
@@ -30,7 +29,6 @@ public class MainPreviewCharacters : MonoBehaviour
         foreach (string playerName in _roomData.Value.GetPlayerNames())
         {
             GameObject g = Instantiate(_characterPreviewPrefab, transform);
-            SetIcon(g, null);
             _references[playerName] = g;
         }
     }
@@ -41,7 +39,7 @@ public class MainPreviewCharacters : MonoBehaviour
 
         foreach (var reference in _references)
         {
-            string characterName = _previewCharacters.Value.GetCharacter(reference.Key);
+            string characterName = _playerCharacters.Value.GetCharacter(reference.Key);
 
             if (characterName == "") continue;
 

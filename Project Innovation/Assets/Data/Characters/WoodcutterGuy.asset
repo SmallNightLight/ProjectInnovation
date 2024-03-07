@@ -27,7 +27,8 @@ MonoBehaviour:
     Icon: {fileID: 21300000, guid: f58bf3b406ee3de4b93811bcd68c782e, type: 3}
     PreviewObject: {fileID: 6858641715781189740, guid: 2376fd35d4d7207439e6e8dd7bfcf1a3,
       type: 3}
-    GameCharacter: {fileID: 0}
+    GameCharacter: {fileID: 4541112577890858820, guid: ef99f6c017f19aa42a99f3ab93c6b1e8,
+      type: 3}
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:

@@ -5,6 +5,10 @@ public class CharacterBase : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField] private PlayersInputReference _playersInput;
+    [SerializeField] private PlayerCharactersReference _characterAssignment;
+    [SerializeField] private CharacterCollectionReference _characterCollection;
+    private CharacterData _characterData;
+    private string _playerName;
     private string _characterName;
 
     [Header("Settings")]
@@ -27,10 +31,21 @@ public class CharacterBase : MonoBehaviour
 
     public void InitializeCharacter(string playerName, int team, Vector3 spawnPosition)
     {
-        _characterName = playerName;
+        _playerName = playerName;
+        _characterName = _characterAssignment.Value.GetCharacter(playerName);
+
+        if (_characterName == "") _characterName = "Piggy";
+
+        _characterCollection.Value.TryGetCharacter(_characterName, out _characterData);
+
+        if (_characterData == null) Debug.LogWarning("No character data found");
+
         _playersInput.Value.TryGetPlayerInput(playerName, out _playerInput);
         _team = team;
         _spawnPosition = spawnPosition;
+
+        //Add character model
+        Instantiate(_characterData.GameCharacter, transform);
     }
 
     public int Team
@@ -41,11 +56,27 @@ public class CharacterBase : MonoBehaviour
         }
     }
 
+    public string PlayerName
+    {
+        get
+        {
+            return _playerName;
+        }
+    }
+
     public string CharacterName
     {
         get
         {
             return _characterName;
+        }
+    }
+
+    public CharacterData CharacterData
+    {
+        get
+        {
+            return _characterData;
         }
     }
 

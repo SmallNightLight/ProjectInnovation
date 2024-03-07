@@ -388,6 +388,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 826127295150301417, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 61f38e52dd882484298e9a7810fcf4c4,
+        type: 3}
+    - target: {fileID: 826127295150301417, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 826127295150301417, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 826127295150301417, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3644343665901147794, guid: 2b6746b4151fae445a1d3eb06dd09794,
         type: 3}
       propertyPath: ButtonInput._variable
@@ -404,13 +425,42 @@ PrefabInstance:
       propertyPath: m_text
       value: Shoot
       objectReference: {fileID: 0}
+    - target: {fileID: 3858397397135120633, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6847973018823225128, guid: 2b6746b4151fae445a1d3eb06dd09794,
         type: 3}
       propertyPath: m_Name
       value: ButtonInput
       objectReference: {fileID: 0}
+    - target: {fileID: 6898998097283255591, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898998097283255591, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 037ad72c01809c940834c631abfb1914,
+        type: 3}
+    - target: {fileID: 6898998097283255591, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 037ad72c01809c940834c631abfb1914,
+        type: 3}
+    - target: {fileID: 6898998097283255591, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 037ad72c01809c940834c631abfb1914,
+        type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4844437890188904685, guid: 2b6746b4151fae445a1d3eb06dd09794, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b6746b4151fae445a1d3eb06dd09794, type: 3}
@@ -1021,7 +1071,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -174, y: -196}
+  m_AnchoredPosition: {x: -224, y: -247}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1603213432
@@ -1350,7 +1400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a5a40226f1f7e884ebf2de94ca14acd6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d329ac7d9dc541d47a8d584a96695526, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1540,6 +1590,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 826127295150301417, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5cb0571b4e87e7c449fc33c69ae63304,
+        type: 3}
     - target: {fileID: 3644343665901147794, guid: 2b6746b4151fae445a1d3eb06dd09794,
         type: 3}
       propertyPath: ButtonInput._isVariable
@@ -1550,8 +1606,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6898998097283255591, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898998097283255591, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b5944bf13132c744a05f1d65ac1d0fc,
+        type: 3}
+    - target: {fileID: 6898998097283255591, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b5944bf13132c744a05f1d65ac1d0fc,
+        type: 3}
+    - target: {fileID: 6898998097283255591, guid: 2b6746b4151fae445a1d3eb06dd09794,
+        type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b5944bf13132c744a05f1d65ac1d0fc,
+        type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4844437890188904685, guid: 2b6746b4151fae445a1d3eb06dd09794, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b6746b4151fae445a1d3eb06dd09794, type: 3}
@@ -1575,7 +1655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8a20685fdb3fbd4ba862de81956ecd4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9906816168aa094d928b635a5f7530b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1624,7 +1704,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a5a40226f1f7e884ebf2de94ca14acd6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9e6ac6f992ca124da3b4cdddf265517, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

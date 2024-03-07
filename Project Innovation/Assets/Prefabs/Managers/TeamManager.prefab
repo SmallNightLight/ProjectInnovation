@@ -84,9 +84,15 @@ MonoBehaviour:
   _playerCharacters:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: 41579ad36b159c941a64aeba22f2a100, type: 2}
-  _previewCharacters:
+  _selectedCharacterData:
     _isVariable: 1
-    _variable: {fileID: 11400000, guid: 0b5f3c7298c458a43b61fea8a183e4de, type: 2}
+    _variable: {fileID: 11400000, guid: 715ccf800e8c60a4297bfe937ae2ef95, type: 2}
+    _constant:
+      Name: 
+      Description: 
+      Icon: {fileID: 0}
+      PreviewObject: {fileID: 0}
+      GameCharacter: {fileID: 0}
   _previewChangeEvent: {fileID: 11400000, guid: 46d403216ae39e24eaaa641615f08f7e,
     type: 2}
 --- !u!114 &8527226301394793644

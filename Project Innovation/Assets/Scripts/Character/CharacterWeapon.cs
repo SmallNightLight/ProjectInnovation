@@ -57,7 +57,7 @@ public class CharacterWeapon : MonoBehaviour
 
             if (TryAddWeaponPart(item.WeaponPartData))
             {
-                _pickupPartEvent.Raise(new String2 { Item1 = _characterBase.CharacterName, Item2 = item.WeaponPartData.Value.ID });
+                _pickupPartEvent.Raise(new String2 { Item1 = _characterBase.PlayerName, Item2 = item.WeaponPartData.Value.ID });
                 _pickupList.RemoveAt(i);
                 Destroy(item.gameObject);
             }
@@ -81,7 +81,7 @@ public class CharacterWeapon : MonoBehaviour
 
         if (!_isCombined && CanCombine())
         {
-            _combineWeaponEvent.Raise(_characterBase.CharacterName);
+            _combineWeaponEvent.Raise(_characterBase.PlayerName);
             _isCombined = true;
             UpdateWeaponVisuals();
         }
@@ -144,7 +144,7 @@ public class CharacterWeapon : MonoBehaviour
         CalculateWeapon();
         _shotCount = 0;
         _isCombined = false;
-        _destroyWeaponEvent.Raise(_characterBase.CharacterName);
+        _destroyWeaponEvent.Raise(_characterBase.PlayerName);
     }
 
     public void UpdateWeaponVisuals()

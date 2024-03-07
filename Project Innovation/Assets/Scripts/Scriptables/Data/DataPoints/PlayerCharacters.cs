@@ -7,10 +7,12 @@ namespace ScriptableArchitecture.Data
     public class PlayerCharacters : IDataPoint
     {
         private Dictionary<string, string> _characters = new Dictionary<string, string>();
+        private HashSet<string> _charactersReady = new HashSet<string>();
 
         public void Clear()
         {
             _characters = new Dictionary<string, string>();
+            _charactersReady = new HashSet<string>();
         }
 
         public void SetCharacter(string playerName, string characterName)
@@ -30,8 +32,13 @@ namespace ScriptableArchitecture.Data
             return _characters[playerName];
         }
 
+        public void SetReady(string playerName)
+        {
+            _charactersReady.Add(playerName);
+        }
+
         public Dictionary<string, string> GetAll() => _characters;
 
-        public int CharacterCount() => _characters.Count;
+        public int CharacterCount() => _charactersReady.Count;
     }
 }
