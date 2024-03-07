@@ -9,16 +9,20 @@ namespace ScriptableArchitecture.Data
     public class RoomData : IDataPoint, IAssignment<RoomData>
     {
         public int PlayersPerTeam = 2;
-        public int MaxTeams = 4;
+        public int MaxTeams = 2;
 
         [SerializeField] private List<TeamData> _teams = new();
         [SerializeField] private int _playerCount = 0;
 
         public RoomData() //This needs to be changed for the actual value to be correct
         {
-            PlayersPerTeam = 1;
+            PlayersPerTeam = 2;
             MaxTeams = 2;
             _teams = new List<TeamData>();
+            for (int i = 0; i < MaxTeams; i++)
+            {
+                _teams.Add(new TeamData());
+            }
             _playerCount = 0;
         }
 
@@ -122,10 +126,12 @@ namespace ScriptableArchitecture.Data
                 }
             }
 
-            //Add new team with new player
-            _teams.Add(new TeamData());
-            _teams[^1].Players.Add(playerName);
-            return true;
+            return false;
+
+            //Add new team with new player - No: dont add more teams, teams already setup in Initialize
+            //_teams.Add(new TeamData());
+            //_teams[^1].Players.Add(playerName);
+            //return true;
         }
 
         public bool HasPlayer(string playerName)
@@ -162,7 +168,13 @@ namespace ScriptableArchitecture.Data
 
         public TeamData GetTeamData(int team)
         {
-            if (team >= TeamCount) return null;
+            if (team >= MaxTeams) return null;
+            
+            if (team >= _teams.Count)
+            {
+                _teams.Add(new TeamData());
+                _teams.Add(new TeamData());
+            }
 
             return _teams[team];
         }
@@ -180,20 +192,5 @@ namespace ScriptableArchitecture.Data
         }
 
         public int PlayerCount => _playerCount;
-
-        public int TeamCount
-        {
-            get
-            {
-                int teamCount = _playerCount / PlayersPerTeam;
-
-                if (_playerCount % PlayersPerTeam != 0)
-                {
-                    teamCount++;
-                }
-
-                return teamCount;
-            }
-        }
     }
 }

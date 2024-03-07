@@ -39,11 +39,12 @@ public class TeamLobby : MonoBehaviour
             child.SetActive(active);
         }
 
-        active = _team < _roomData.Value.TeamCount;
-        foreach (GameObject child in _visualChildren)
-        {
-            child.SetActive(active);
-        }
+        //Always activate children now
+        //active = _team < _roomData.Value.TeamCount;
+        //foreach (GameObject child in _visualChildren)
+        //{
+        //    child.SetActive(active);
+        //}
     }
 
     public void SetPlayerTeam()
