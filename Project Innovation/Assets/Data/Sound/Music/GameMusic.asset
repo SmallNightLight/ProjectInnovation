@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d16037ae7172ca45835c73bde4892bd, type: 3}
-  m_Name: Click2
+  m_Name: GameMusic
   m_EditorClassIdentifier: 
   VariableType: 0
   InitializeTypeVariable: 2
@@ -24,10 +24,10 @@ MonoBehaviour:
   _startValue:
     audioMixerSnapshot: {fileID: 24300002, guid: b43c7fce8d9845a44bbd028883905885,
       type: 2}
-    AudioClip: {fileID: 8300000, guid: 284b7915f15c146489a641814337a427, type: 3}
-    Volume: 0.4
+    AudioClip: {fileID: 8300000, guid: 6984745f8d8fd3b43b85b9375ad14d79, type: 3}
+    Volume: 0.7
     Pitch: 1
-    Loop: 0
+    Loop: 1
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:
