@@ -1,4 +1,5 @@
 using ScriptableArchitecture.Data;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,11 @@ public class CharacterHealth : MonoBehaviour
     [SerializeField] private Color _colorTeam1;
     [SerializeField] private Color _colorTeam2;
 
+    [Header("Sounds")]
+    [SerializeField] private SoundEffectReference _soundEffectRaiser;
+    [SerializeField] private SoundEffectReference _hitSound;
+    [SerializeField] private SoundEffectReference _deathSound;
+
     [Header("Components")]
     [SerializeField] private Image _iconImage;
     [SerializeField] private Image _fillImage;
@@ -26,6 +32,7 @@ public class CharacterHealth : MonoBehaviour
         _healthSlider = GetComponentInChildren<Slider>();
 
         _health = _startHealth.Value;
+        _canSound = true;
     }
 
     public void Initialize(int team, CharacterData characterData)
@@ -49,7 +56,27 @@ public class CharacterHealth : MonoBehaviour
         _health -= amount;
 
         if (_health <= 0)
+        {
+            _soundEffectRaiser.Raise(_deathSound.Value);
             Death();
+        }
+        else
+        {
+            if (_canSound)
+            {
+                StartCoroutine(SoundWait());
+                _soundEffectRaiser.Raise(_hitSound.Value);
+            }
+        }
+    }
+
+    bool _canSound;
+
+    IEnumerator SoundWait()
+    {
+        _canSound = false;
+        yield return new WaitForSeconds(0.1f);
+        _canSound = true;
     }
 
     [ContextMenu("DIE")]

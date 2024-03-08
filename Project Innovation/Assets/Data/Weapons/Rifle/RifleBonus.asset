@@ -30,6 +30,7 @@ MonoBehaviour:
     EnemyRecoil: 0
     PartPrefab: {fileID: 0}
     IconPrefab: {fileID: 0}
+    ShootSoundEffect: {fileID: 0}
   _startValue:
     MainWeapon: {fileID: 11400000, guid: cefcc42cbffcb444eb05f1f6544268c5, type: 2}
     PartType: 3
@@ -45,6 +46,7 @@ MonoBehaviour:
     EnemyRecoil: 0
     PartPrefab: {fileID: 0}
     IconPrefab: {fileID: 0}
+    ShootSoundEffect: {fileID: 11400000, guid: 292e692f9263cc348821ca5f3fcf4ae5, type: 2}
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:
@@ -62,3 +64,4 @@ MonoBehaviour:
     EnemyRecoil: 0
     PartPrefab: {fileID: 0}
     IconPrefab: {fileID: 0}
+    ShootSoundEffect: {fileID: 0}

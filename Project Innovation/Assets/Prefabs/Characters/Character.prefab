@@ -381,6 +381,15 @@ MonoBehaviour:
     _constant: 
   _infiniteAmmo: 0
   _shakeMargin: 1.5
+  _soundEffectRaiser:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: e4a7ef4a2433b924d83525305bc93702, type: 2}
+    _constant:
+      audioMixerSnapshot: {fileID: 0}
+      AudioClip: {fileID: 0}
+      Volume: 0
+      Pitch: 0
+      Loop: 0
   _bulletPrefab: {fileID: 6071708913489709977, guid: ba22ee4be98282e4fa4b721e3037a550,
     type: 3}
   _parentWeapon: {fileID: 8191382611689675293}
@@ -410,6 +419,33 @@ MonoBehaviour:
       _playerCount: 0
   _colorTeam1: {r: 0.34509805, g: 0.25490198, b: 0.98039216, a: 1}
   _colorTeam2: {r: 0.98039216, g: 0.55250466, b: 0.25490195, a: 1}
+  _soundEffectRaiser:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: e4a7ef4a2433b924d83525305bc93702, type: 2}
+    _constant:
+      audioMixerSnapshot: {fileID: 0}
+      AudioClip: {fileID: 0}
+      Volume: 0
+      Pitch: 0
+      Loop: 0
+  _hitSound:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: cc062bc1a3b575b40b79784f261236a6, type: 2}
+    _constant:
+      audioMixerSnapshot: {fileID: 0}
+      AudioClip: {fileID: 0}
+      Volume: 0
+      Pitch: 0
+      Loop: 0
+  _deathSound:
+    _isVariable: 1
+    _variable: {fileID: 11400000, guid: 2deecf8caa60813468e023f1e4283726, type: 2}
+    _constant:
+      audioMixerSnapshot: {fileID: 0}
+      AudioClip: {fileID: 0}
+      Volume: 0
+      Pitch: 0
+      Loop: 0
   _iconImage: {fileID: 6011191077769279451}
   _fillImage: {fileID: 3954939144681102201}
 --- !u!114 &1396614281824907882

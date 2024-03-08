@@ -25,7 +25,7 @@ MonoBehaviour:
     audioMixerSnapshot: {fileID: 24300002, guid: b43c7fce8d9845a44bbd028883905885,
       type: 2}
     AudioClip: {fileID: 8300000, guid: 6984745f8d8fd3b43b85b9375ad14d79, type: 3}
-    Volume: 0.7
+    Volume: 0.5
     Pitch: 1
     Loop: 1
   _runtimeSet: []

@@ -22,6 +22,9 @@ public class CharacterWeapon : MonoBehaviour
     private List<Item> _pickupList = new List<Item>();
     private bool _isCombined;
 
+    [Header("Sounds")]
+    [SerializeField] private SoundEffectReference _soundEffectRaiser;
+
     [Header("Prefabs")]
     [SerializeField] private GameObject _bulletPrefab;
 
@@ -94,6 +97,14 @@ public class CharacterWeapon : MonoBehaviour
         for (int i = 0; i < _currentWeaponData.BulletsPerShot; i++)
         {
             Bullet();
+        }
+
+        if (HasWeaponType(WeaponPartType.Base) && _bulletExitPoint != null)
+        {
+            if (TryGetWeaponPart(WeaponPartType.Base, out WeaponPartData weaponPartData))
+            {
+                _soundEffectRaiser.Raise(weaponPartData.ShootSoundEffect.Value);
+            }
         }
     }
 

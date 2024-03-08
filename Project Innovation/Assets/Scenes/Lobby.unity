@@ -969,6 +969,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: e4a7ef4a2433b924d83525305bc93702, type: 2}
+        m_TargetAssemblyTypeName: ScriptableArchitecture.Data.SoundEffectVariable,
+          ScriptableAssembly.Data
+        m_MethodName: RaiseEffect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 2df8e246d3a557b4c8d5883ed22bfaee,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: ScriptableArchitecture.Data.SoundEffectVariable,
+            ScriptableAssembly.Data
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &350622786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1342,7 @@ MonoBehaviour:
         m_MethodName: RaiseEffect
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 838081a8a09059348b56fe9952da593b,
+          m_ObjectArgument: {fileID: 11400000, guid: 4ac083ab9ca0468449c5277d7c218147,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: ScriptableArchitecture.Data.SoundEffectVariable,
             ScriptableAssembly.Data
@@ -2649,7 +2664,22 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: e4a7ef4a2433b924d83525305bc93702, type: 2}
+        m_TargetAssemblyTypeName: ScriptableArchitecture.Data.SoundEffectVariable,
+          ScriptableAssembly.Data
+        m_MethodName: RaiseEffect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 2df8e246d3a557b4c8d5883ed22bfaee,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: ScriptableArchitecture.Data.SoundEffectVariable,
+            ScriptableAssembly.Data
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -3804,7 +3834,7 @@ MonoBehaviour:
         m_MethodName: RaiseEffect
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 838081a8a09059348b56fe9952da593b,
+          m_ObjectArgument: {fileID: 11400000, guid: 4ac083ab9ca0468449c5277d7c218147,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: ScriptableArchitecture.Data.SoundEffectVariable,
             ScriptableAssembly.Data
@@ -4537,7 +4567,22 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: e4a7ef4a2433b924d83525305bc93702, type: 2}
+        m_TargetAssemblyTypeName: ScriptableArchitecture.Data.SoundEffectVariable,
+          ScriptableAssembly.Data
+        m_MethodName: RaiseEffect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 2df8e246d3a557b4c8d5883ed22bfaee,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: ScriptableArchitecture.Data.SoundEffectVariable,
+            ScriptableAssembly.Data
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -4712,7 +4757,22 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: e4a7ef4a2433b924d83525305bc93702, type: 2}
+        m_TargetAssemblyTypeName: ScriptableArchitecture.Data.SoundEffectVariable,
+          ScriptableAssembly.Data
+        m_MethodName: RaiseEffect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 2df8e246d3a557b4c8d5883ed22bfaee,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: ScriptableArchitecture.Data.SoundEffectVariable,
+            ScriptableAssembly.Data
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls: []
@@ -7099,7 +7159,7 @@ MonoBehaviour:
         m_MethodName: RaiseEffect
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 838081a8a09059348b56fe9952da593b,
+          m_ObjectArgument: {fileID: 11400000, guid: 4ac083ab9ca0468449c5277d7c218147,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: ScriptableArchitecture.Data.SoundEffectVariable,
             ScriptableAssembly.Data
@@ -7272,7 +7332,7 @@ MonoBehaviour:
         m_MethodName: RaiseEffect
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 838081a8a09059348b56fe9952da593b,
+          m_ObjectArgument: {fileID: 11400000, guid: 4ac083ab9ca0468449c5277d7c218147,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: ScriptableArchitecture.Data.SoundEffectVariable,
             ScriptableAssembly.Data

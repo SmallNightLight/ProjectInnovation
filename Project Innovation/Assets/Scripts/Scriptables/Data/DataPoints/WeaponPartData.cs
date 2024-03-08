@@ -25,6 +25,9 @@ namespace ScriptableArchitecture.Data
         [Header("Prefabs")]
         public GameObject PartPrefab;
         public GameObject IconPrefab;
+
+        [Header("Sound")]
+        public SoundEffectVariable ShootSoundEffect;
     }
 
     public enum WeaponPartType

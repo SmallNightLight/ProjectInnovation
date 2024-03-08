@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d16037ae7172ca45835c73bde4892bd, type: 3}
-  m_Name: MenuMusic
+  m_Name: ClickLow
   m_EditorClassIdentifier: 
   VariableType: 0
   InitializeTypeVariable: 2
@@ -24,10 +24,10 @@ MonoBehaviour:
   _startValue:
     audioMixerSnapshot: {fileID: 24300002, guid: b43c7fce8d9845a44bbd028883905885,
       type: 2}
-    AudioClip: {fileID: 8300000, guid: 06186f61e7540d94e92463518b2fdb0b, type: 3}
-    Volume: 0.5
-    Pitch: 1
-    Loop: 1
+    AudioClip: {fileID: 8300000, guid: 10d1acd6ea2f46a45861ec3796d53816, type: 3}
+    Volume: 0.2
+    Pitch: 0.1
+    Loop: 0
   _runtimeSet: []
   _startRuntimeSet: []
   DebugValue:
