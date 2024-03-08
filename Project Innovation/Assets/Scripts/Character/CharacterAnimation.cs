@@ -37,11 +37,11 @@ public class CharacterAnimation : MonoBehaviour
             if (facingDirection == Vector2.zero)
                 facingDirection = _oldDirection;
 
-            float angleInRadians = (Vector2.SignedAngle(facingDirection, movementDirection) + 90) * Mathf.Deg2Rad;
+            float angleInRadians = Vector2.SignedAngle(facingDirection, movementDirection) * Mathf.Deg2Rad;
             Vector2 animationDirection = new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians));
 
-            animator.SetFloat("MovementHorizontal", animationDirection.x, 0.1f, Time.deltaTime);
-            animator.SetFloat("MovementVertical", animationDirection.y, 0.1f, Time.deltaTime);
+            animator.SetFloat("MovementHorizontal", animationDirection.y, 0.1f, Time.deltaTime);
+            animator.SetFloat("MovementVertical", animationDirection.x, 0.1f, Time.deltaTime);
 
             _oldDirection = facingDirection;
         }
