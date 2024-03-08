@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8983031970709307921}
   - component: {fileID: 3249003399800403788}
   - component: {fileID: 5259057699233045115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RifleBarrelItem
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -64,6 +64,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   _hoverEmmissionColor: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
 --- !u!135 &5259057699233045115
 SphereCollider:
@@ -97,7 +98,7 @@ GameObject:
   - component: {fileID: 5600395940740542232}
   - component: {fileID: 983951065173301927}
   - component: {fileID: 6730358795185087729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RifleBarrelItem
   m_TagString: Item
   m_Icon: {fileID: 0}

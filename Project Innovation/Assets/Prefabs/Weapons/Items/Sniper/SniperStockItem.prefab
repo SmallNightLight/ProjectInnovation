@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3151757182246769882}
   - component: {fileID: -6929539895045287637}
   - component: {fileID: -7573748876257190669}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SniperStockItem
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -64,6 +64,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   _hoverEmmissionColor: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
 --- !u!135 &-7573748876257190669
 SphereCollider:
@@ -97,7 +98,7 @@ GameObject:
   - component: {fileID: 3924823420553504852}
   - component: {fileID: 4435366951476848910}
   - component: {fileID: 3424904925972124238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SniperStockItem
   m_TagString: Item
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 543543942740965265}
   - component: {fileID: 787366045424782269}
   - component: {fileID: 8798284221900908367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShotgunBaseItem
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8212643666107755314}
   - component: {fileID: 1689365600145858266}
   - component: {fileID: 9203235728972754780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShotgunBaseItem
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -147,6 +147,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   _hoverEmmissionColor: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
 --- !u!135 &9203235728972754780
 SphereCollider:

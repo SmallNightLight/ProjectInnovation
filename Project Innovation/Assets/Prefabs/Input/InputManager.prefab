@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7029366358248380531}
   - component: {fileID: 4659996535648585276}
   - component: {fileID: 8386363341568698142}
+  - component: {fileID: 5491501862480528629}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -93,6 +94,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   - _isVariable: 1
     _variable: {fileID: 11400000, guid: c83be9ddbc9af17428502e32d40ff3ad, type: 2}
     _constant:
@@ -110,6 +112,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   - _isVariable: 1
     _variable: {fileID: 11400000, guid: 877630f942c10f64e83f7825ad48c338, type: 2}
     _constant:
@@ -127,6 +130,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   - _isVariable: 1
     _variable: {fileID: 11400000, guid: ee459f8a70adf8a47b9e58ea084cd796, type: 2}
     _constant:
@@ -144,6 +148,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   - _isVariable: 1
     _variable: {fileID: 11400000, guid: f9eb399e16f4f0a47b281d0bf971b8fc, type: 2}
     _constant:
@@ -161,6 +166,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   - _isVariable: 1
     _variable: {fileID: 11400000, guid: bfee93d8f2369b64985553bc52553b1c, type: 2}
     _constant:
@@ -178,6 +184,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   - _isVariable: 1
     _variable: {fileID: 11400000, guid: 76b492b117a2f854e895cbbbf721f2d5, type: 2}
     _constant:
@@ -195,6 +202,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   - _isVariable: 1
     _variable: {fileID: 11400000, guid: e6bcba5d951a71449ac1bb0a612cb61e, type: 2}
     _constant:
@@ -212,6 +220,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   - _isVariable: 1
     _variable: {fileID: 11400000, guid: 5e8045d4a42b4bb4db8ec57dcbad0c6a, type: 2}
     _constant:
@@ -229,6 +238,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   _addPartEvent:
     _isVariable: 1
     _variable: {fileID: 11400000, guid: e74b00ed3c9ef3c4fabfb0c12799149d, type: 2}
@@ -247,9 +257,13 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   _removePartsEvent: {fileID: 11400000, guid: 2545283ab728c2941bddb3def914ab78, type: 2}
   _combineWeaponEvent: {fileID: 11400000, guid: 692ff84e48517344a8ef42d7ae2f7acf,
     type: 2}
+  _mainGameOver: {fileID: 0}
+  _winVideo: {fileID: 0}
+  _loseVideo: {fileID: 0}
 --- !u!114 &1011509302223543043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,3 +370,31 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _event: {fileID: 11400000, guid: fe5110593d819d54ebed741a85323869, type: 2}
+--- !u!114 &5491501862480528629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4385584138493054418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef5f6a3754f7d84cb4a334590295269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5379131900541951661}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: GameEnd
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _event: {fileID: 11400000, guid: fd1bab643efdd314987dac9960b72ade, type: 2}

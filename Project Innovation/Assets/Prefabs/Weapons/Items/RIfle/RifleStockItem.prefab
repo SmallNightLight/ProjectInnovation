@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4491879106187106786}
   - component: {fileID: 5572551006486672181}
   - component: {fileID: 3339758747900493762}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RifleStockItem
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6695275945786792679}
   - component: {fileID: 191215234390634346}
   - component: {fileID: 2873477366337805521}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RifleStockItem
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -147,6 +147,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   _hoverEmmissionColor: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
 --- !u!135 &2873477366337805521
 SphereCollider:

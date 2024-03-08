@@ -1,7 +1,10 @@
 using Photon.Pun;
 using ScriptableArchitecture.Data;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 [RequireComponent(typeof(PhotonView))]
 public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
@@ -25,7 +28,9 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
 
     [Header("Components")]
     private PhotonView _photonView;
-
+    [SerializeField] private GameObject _mainGameOver;
+    [SerializeField] private VideoPlayer _winVideo;
+    [SerializeField] private VideoPlayer _loseVideo;
 
     public void Setup()
     {
@@ -125,5 +130,40 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
         if (_playerName.Value != playerName) return;
 
         _combineWeaponEvent.Raise(); 
+    }
+
+    public void GameEnd(string winPlayers)
+    {
+        _photonView.RPC("GameEndRPC", RpcTarget.All, winPlayers);
+    }
+
+    [PunRPC]
+    public void GameEndRPC(string winPlayers)
+    {
+        if (!_isMainGame.Value)
+        {
+            List<string> winPlayerList = JsonUtility.FromJson<List<string>>(winPlayers);
+
+            if (winPlayerList.Contains(_playerName.Value))
+            {
+                _winVideo.gameObject.SetActive(true);
+            }
+            else
+            {
+                _loseVideo.gameObject.SetActive(true);
+            }
+
+            StartCoroutine(LoadSceneInTime("Lobby", 5));
+        }
+        else
+        {
+            _mainGameOver.SetActive(true);
+        }
+    }
+
+    private IEnumerator LoadSceneInTime(string sceneeName, float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(sceneeName);
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4733494668125857118}
   - component: {fileID: 6982948929536414952}
   - component: {fileID: -161611211993542606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShotgunStockItem
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -64,6 +64,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   _hoverEmmissionColor: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
 --- !u!135 &-161611211993542606
 SphereCollider:
@@ -97,7 +98,7 @@ GameObject:
   - component: {fileID: 8029492484634576725}
   - component: {fileID: 3318929324439167437}
   - component: {fileID: 5027977255490763758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShotgunStockItem
   m_TagString: Item
   m_Icon: {fileID: 0}

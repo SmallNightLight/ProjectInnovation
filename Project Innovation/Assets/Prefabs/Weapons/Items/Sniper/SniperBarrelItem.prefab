@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8375204773177823667}
   - component: {fileID: 4314342207466762247}
   - component: {fileID: 4232872849067923328}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SniperBarrelItem
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6570609719525466134}
   - component: {fileID: 8808813515615926444}
   - component: {fileID: 8809215169433015597}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SniperBarrelItem
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -147,6 +147,7 @@ MonoBehaviour:
       EnemyRecoil: 0
       PartPrefab: {fileID: 0}
       IconPrefab: {fileID: 0}
+      ShootSoundEffect: {fileID: 0}
   _hoverEmmissionColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
 --- !u!135 &8809215169433015597
 SphereCollider:

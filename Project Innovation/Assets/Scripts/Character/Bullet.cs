@@ -20,14 +20,8 @@ public class Bullet : MonoBehaviour
         _startPosition = transform.position;
         _weaponData = weaponData;
         _team = team;
-    }
 
-    private void Update()
-    {
-        if (Vector3.Distance(_startPosition, transform.position) >= _weaponData.Range)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject, 3f);
     }
 
     private void OnTriggerEnter(Collider other)

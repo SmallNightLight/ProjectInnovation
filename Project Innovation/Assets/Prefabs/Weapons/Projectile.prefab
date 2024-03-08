@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1153089650211884404}
   - component: {fileID: 356860296060700771}
   - component: {fileID: 8750690729415631917}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4906,6 +4906,61 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &4855266165111075649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1025211100164077955}
+  - component: {fileID: 3689512178950195739}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1025211100164077955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4855266165111075649}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1301728163803124784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &3689512178950195739
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4855266165111075649}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.0000005
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6071708913489709977
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,7 +4975,7 @@ GameObject:
   - component: {fileID: 724479148370698839}
   - component: {fileID: 1956478795673613788}
   - component: {fileID: 1871009054406473627}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -4942,6 +4997,7 @@ Transform:
   m_Children:
   - {fileID: 7215938057659907367}
   - {fileID: 1153089650211884404}
+  - {fileID: 1025211100164077955}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &7530580668817001312
@@ -5021,7 +5077,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -5066,7 +5122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7215938057659907367}
   - component: {fileID: 7508428701868227570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
