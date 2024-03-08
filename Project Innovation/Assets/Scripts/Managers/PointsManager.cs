@@ -1,4 +1,5 @@
 using ScriptableArchitecture.Data;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PointsManager : MonoBehaviour
@@ -18,13 +19,16 @@ public class PointsManager : MonoBehaviour
     {
         if (_over) return;
 
+        int winTeam = 1;
         foreach(var v in _roomData.Value.GetTeams())
         {
             if (v.DeathCount >= _pointsForWin)
             {
                 _over = true;
-                _gameEndEvent.Raise(JsonUtility.ToJson(v.Players));
+                List<string> pW = _roomData.Value.GetTeams()[winTeam].Players;
+                _gameEndEvent.Raise(string.Join(",", pW)); //FAST FIX SRY
             }
+            winTeam--;
         }
     }
 }

@@ -142,7 +142,7 @@ public class InputManager : MonoBehaviour, ISetupManager, IUpdateManager
     {
         if (!_isMainGame.Value)
         {
-            List<string> winPlayerList = JsonUtility.FromJson<List<string>>(winPlayers);
+            List<string> winPlayerList = new List<string>(winPlayers.Split(','));
 
             if (winPlayerList.Contains(_playerName.Value))
             {

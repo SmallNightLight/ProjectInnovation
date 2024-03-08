@@ -31,6 +31,11 @@ public class TeamManager : MonoBehaviour, ISetupManager
 
     public void Setup()
     {
+        if (PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.LeaveRoom();
+        }
+
         _photonView = GetComponent<PhotonView>();
         _playerCharacters.Value.Clear();
     }
